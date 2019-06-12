@@ -1,0 +1,185 @@
+<!-- 用户详情表单
+* 分类查询
+	* 全部
+	* 为支付
+	* 已支付 -->
+<!-- 选项卡布局 -->
+<view class='topTabSwiper'>
+	<view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>
+		全部
+	</view>
+	<view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>
+		未支付
+	</view>
+	<view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>
+		已支付
+	</view>
+	<view class='tab  {{currentData == 3 ? "tabBorer" : ""}}' data-current="3" bindtap='checkCurrent'>
+		已完成
+	</view>
+	<view class='tab  {{currentData == 4 ? "tabBorer" : ""}}' data-current="4" bindtap='checkCurrent'>
+		退款
+	</view>
+</view>
+<swiper current="{{currentData}}" class='swiper' style="height:{{height}}rpx;" duration="300" bindchange="bindchange">
+	<swiper-item>
+		<view class='swiper_con'>
+			<!-- 1.全部订单表数据 全部订单概况 -->
+			<view class="card" wx:for="{{allList}}" wx:key="i">
+				<navigator url='{{order_url}}?o_id={{item.o_id}}&o_state={{item.o_state}}'>
+					<view class="card_top">
+						<view class="left">
+							<image src="{{url}}{{item.doc_img}}" lazy-load='true'></image>
+						</view>
+						<view class="center">
+							<text>{{item.doc_name}}</text>
+							<text>接诊时间：{{item.doc_time}}</text>
+						</view>
+						<view class="right">
+							<text class="{{item.o_state==0?'faile':'succes'}}">
+								{{item.o_state==0?"未支付":"已支付"}}
+							</text>
+							<text>￥{{item.all_price}}</text>
+						</view>
+					</view>
+					<view class="card_bottom">
+						<view class="blue" wx:if="{{item.o_state==0}}" bindtap='payfor'>去缴费</view>
+						<view class="red" wx:if="{{item.o_state==0}}">取消订单</view>
+						<view class="red" wx:if="{{item.o_state==1}}" catchtap='payback' data-o_id="{{item.o_id}}">
+							申请退款
+						</view>
+						<view class="red" wx:if="{{item.o_state==2}}">待评价</view>
+						<view class="blue" wx:if="{{item.o_state==3}}">已评价</view>
+						<view class="red" wx:if="{{item.o_state==5}}">退款中</view>
+						<view class="red" wx:if="{{item.o_state==6}}">已退款</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 1 -->
+		</view>
+	</swiper-item>
+	<!-- 2订单未支付完成信息 -->
+	<!-- <navigator url='{{order_url}}?is_pay={{item.is_pay}}&doc_name={{item.doc_name}}&all_price={{item.all_price}}&doc_img={{item.doc_img}}&doc_office={{item.doc_office}}&o_age={{item.o_age}}&o_img={{item.o_img}}&o_id={{item.o_id}}&o_name={{item.o_name}}&o_num={{item.o_num}}&o_phone={{item.o_phone}}&o_state={{item.o_state}}&doc_time={{item.doc_time}}'> -->
+	<swiper-item>
+		<view class='swiper_con'>
+			<view class="card" wx:for="{{faList}}" wx:key="i">
+				<navigator url='{{order_url}}?o_id={{item.o_id}}&o_state={{item.o_state}}'>
+					<view class="card_top">
+						<view class="left">
+							<image src="{{url}}{{item.doc_img}}" lazy-load='true'></image>
+						</view>
+						<view class="center">
+							<text>{{item.doc_name}}</text>
+							<text>接诊时间：{{item.doc_time}}</text>
+						</view>
+						<view class="right">
+							<text class="{{item.o_state==1?'succes':'faile'}}">
+								{{item.o_state==1?"已支付":"未支付"}}
+							</text>
+							<text>￥{{item.all_price}}</text>
+						</view>
+					</view>
+					<view class="card_bottom">
+						<view class="blue" wx:if="{{item.o_state==0}}" bindtap='payfor'>去缴费</view>
+						<view class="red">取消订单</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 2 -->
+		</view>
+	</swiper-item>
+	<!-- 3 
+订单完成支付操作 -->
+	<swiper-item>
+		<view class='swiper_con'>
+			<view class="card" wx:for="{{sucList}}" wx:key="i">
+				<navigator url='{{order_url}}?o_id={{item.o_id}}&o_state={{item.o_state}}'>
+					<view class="card_top">
+						<view class="left">
+							<image src="{{url}}{{item.doc_img}}" lazy-load='true'></image>
+						</view>
+						<view class="center">
+							<text>{{item.doc_name}}</text>
+							<text>接诊时间：{{item.doc_time}}</text>
+						</view>
+						<view class="right">
+							<text class="{{item.o_state==1?'succes':'faile'}}">
+								{{item.o_state==1?"已支付":"未支付"}}
+							</text>
+							<text>￥{{item.all_price}}</text>
+						</view>
+					</view>
+					<view class="card_bottom">
+						<!-- 申请退款 -->
+						<!-- <view class="red"  bindtap='payback'>取消订单</view> -->
+						<view class="red" catchtap='payback' data-o_id="{{item.o_id}}">申请退款</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 3 -->
+		</view>
+	</swiper-item>
+	<!-- 4
+订单已完成时的状态值 -->
+	<swiper-item>
+		<view class='swiper_con'>
+			<view class="card" wx:for="{{myList}}" wx:key="i">
+				<navigator url='{{order_url}}?o_id={{item.o_id}}&o_state={{item.o_state}}'>
+					<view class="card_top">
+						<view class="left">
+							<image src="{{url}}{{item.doc_img}}" lazy-load='true'></image>
+						</view>
+						<view class="center">
+							<text>{{item.doc_name}}</text>
+							<text>接诊时间：{{item.doc_time}}</text>
+						</view>
+						<view class="right">
+							<text class="{{item.o_state==2?'succes':item.o_state==3?'succes':'faile'}}">
+								{{item.o_state==2?"已完成":item.o_state==3?"已完成":"未支付"}}
+							</text>
+							<text>￥{{item.all_price}}</text>
+						</view>
+					</view>
+					<view class="card_bottom">
+						<!-- <view class="blue" bindtap='' wx:if="">待评价</view> -->
+						<view class="red" bindtap='' wx:if="{{item.o_state==2}}">评价得积分</view>
+						<view class="blue" bindtap='' wx:if="{{item.o_state==3}}">已评价</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 4 -->
+		</view>
+	</swiper-item>
+	<!-- 5
+  订单退款时的状态值 -->
+	<swiper-item>
+		<view class='swiper_con'>
+			<view class="card" wx:for="{{backList}}" wx:key="i">
+				<navigator url='{{order_url}}?o_id={{item.o_id}}&o_state={{item.o_state}}'>
+					<view class="card_top">
+						<view class="left">
+							<image src="{{url}}{{item.doc_img}}" lazy-load='true'></image>
+						</view>
+						<view class="center">
+							<text>{{item.doc_name}}</text>
+							<text>接诊时间：{{item.doc_time}}</text>
+						</view>
+						<view class="right">
+							<text class="{{item.o_state==5?'succes':'faile'}}">
+								{{item.o_state==5?"退款进行中":"退款成功"}}
+							</text>
+							<text>¥{{item.all_price}}</text>
+						</view>
+					</view>
+					<view class="card_bottom">
+						<!-- 取消退款 -->
+						<view class="blue" wx:if="{{item.o_state==5}}">取消退款</view>
+						<view class="blue" wx:if="{{item.o_state==6}}">退款成功</view>
+						<view class="blue" wx:if="{{item.o_state==5}}">退款进行中</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 5 -->
+		</view>
+	</swiper-item>
+</swiper>

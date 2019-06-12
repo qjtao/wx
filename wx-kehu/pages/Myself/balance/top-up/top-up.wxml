@@ -1,0 +1,21 @@
+<!-- pages/top-up/top-up.wxml -->
+<view>
+	<!-- 充值金额输入框 -->
+	<view class='add-text'>
+		<view>充值金额</view>
+		<!-- bindinput="bindKeyInput" -->
+		<input type='number' placeholder='0.00' placeholder-style='color:#acacac;' value="{{userInput}}" bindinput="bindKeyInput"
+		 maxlength='7' />
+		<image class='money' src='{{url}}images/top-up/money.png' lazy-load='true'></image>
+		<image class='del' src='{{url}}images/top-up/del_icon.png' bindtap='clearInput' lazy-load='true'></image>
+	</view>
+	<!-- 充值说明 -->
+	<view class='explain'>
+		<image src='{{url}}images/top-up/query.png' lazy-load='true'></image>
+		充值说明
+	</view>
+	<!-- 立即支付 -->
+	<view>
+		<button type='submit' bindtap='payFor'>立即支付</button>
+	</view>
+</view>

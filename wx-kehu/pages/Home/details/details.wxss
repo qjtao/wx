@@ -1,0 +1,237 @@
+/* pages/home/details/details.wxss */
+/* 背景色 */
+page {
+	background: rgba(237, 237, 237, 1);
+	font-size: calc(14rpx * 2);
+	font-family: PingFang-SC-Medium;
+}
+
+/* 上部card */
+.card {
+	background: rgba(255, 255, 255, 1);
+	border-radius: calc(5rpx * 2);
+	width: calc(355rpx * 2);
+	margin: calc(10rpx * 2) auto calc(20rpx * 2);
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	padding: calc(15rpx * 2);
+	box-sizing: border-box;
+	position: relative;
+}
+
+.card.none {
+	height: calc(330rpx * 2);
+}
+
+/* 头像部分 */
+.header .top {
+	height: calc(65rpx * 2);
+	display: block;
+	width: 100%;
+}
+
+/* 照片 */
+.header .top .img {
+	width: calc(65rpx * 2);
+	height: calc(65rpx * 2);
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.header .top .img image {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+/* 内容 */
+.header .top .content {
+	position: relative;
+	display: inline-block;
+	padding-left: calc(13rpx * 2);
+}
+
+.header .top .title {
+	font-size: calc(16rpx * 2);
+}
+
+.header .title {
+	margin-bottom: calc(13rpx *2);
+}
+
+.label {
+	color: rgba(255, 255, 255, 1);
+	background: rgba(0, 126, 233, 1);
+	border-radius: calc(10rpx * 2);
+	padding: 0 calc(10rpx *2);
+	margin-right: calc(10rpx * 2);
+}
+
+/* 简介 */
+.introduction {
+	width: 100%;
+	display: flex;
+	margin: calc(12rpx * 2) 0;
+}
+
+.introduction .title {
+	width: calc(40rpx * 2);
+}
+
+.introduction .body {
+	width: calc(100% - 40rpx * 2);
+}
+
+.introduction .body .last {
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	/** 对象作为伸缩盒子模型显示 **/
+	-webkit-box-orient: vertical;
+	/** 设置或检索伸缩盒对象的子元素的排列方式 **/
+	-webkit-line-clamp: 2;
+	/** 显示的行数 **/
+	overflow: hidden;
+	/** 隐藏超出的内容 **/
+}
+
+/* 按钮 */
+.btn {
+	text-align: right;
+	color: rgba(0, 126, 233, 1);
+}
+
+.title {
+	color: rgba(0, 0, 0, 1);
+}
+
+.body {
+	color: rgba(198, 198, 198, 1);
+}
+
+.card.buttom {
+	margin-bottom: calc(60rpx * 2);
+}
+
+/* 下面头部 */
+.buttom .header {
+	display: flex;
+	border-bottom: 1rpx solid rgba(237, 237, 237, 1);
+	width: calc(100% + 15rpx);
+	margin-left: calc(-15rpx * 2);
+	padding: 0 calc(15rpx * 2);
+	justify-content: space-between;
+}
+
+/* 时间表 */
+.date {
+	display: flex;
+	justify-content: space-around;
+}
+
+.date .week {
+	margin: calc(9rpx * 2);
+}
+
+.date .day {
+	background: rgba(172, 172, 172, 1);
+	color: rgba(255, 255, 255, 1);
+	border-radius: 50%;
+	width: calc(30rpx * 2);
+	height: calc(30rpx * 2);
+	line-height: calc(30rpx * 2);
+	text-align: center;
+	margin-bottom: calc(10rpx * 2);
+}
+
+.date .week.active {
+	color: rgba(0, 126, 233, 1);
+}
+
+.date .day.active {
+	background: rgba(0, 126, 233, 1);
+}
+
+.dateList view {
+	pointer-events: none;
+}
+
+/* 下方列表无数据时 */
+.none .content {
+	text-align: center;
+	line-height: calc(200rpx * 2);
+	color: rgba(198, 198, 198, 1);
+}
+
+/* 下方列表有数据时 */
+.buttom .content .box {
+	display: flex;
+	color: rgba(172, 172, 172, 1);
+	justify-content: space-between;
+	align-items: center;
+	margin: calc(18rpx * 2) 0;
+}
+
+.price {
+	color: rgba(255, 162, 30, 1);
+}
+
+.primary {
+	color: rgba(51, 152, 237, 1);
+}
+
+.danger {
+	color: rgba(255, 0, 0, 1);
+}
+
+.content {
+	min-height: calc(160rpx * 2);
+}
+
+.orderBox::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.orderBox {
+	width: calc(100% + 14rpx * 2);
+	position: relative;
+}
+
+.order {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: calc(5rpx * 2);
+	margin: 0 calc(14rpx * 2) calc(11rpx * 2) 0;
+	padding: calc(8rpx * 2) calc(16rpx * 2);
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(51, 152, 237, 1);
+	color: rgba(51, 152, 237, 1);
+	background: rgba(255, 255, 255, 1);
+	float: left;
+}
+
+.content .active {
+	border-color: rgba(51, 152, 237, 1);
+	color: rgba(255, 255, 255, 1);
+	background: rgba(51, 152, 237, 1);
+}
+
+/* 底部按钮 */
+.botton {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: calc(49rpx * 2);
+	background-image: linear-gradient(to right, rgba(32, 144, 253, 1), rgba(70, 118, 254, 1));
+	color: rgba(255, 255, 255, 1);
+	font-size: calc(16rpx * 2);
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

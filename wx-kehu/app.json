@@ -1,0 +1,67 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/Home/Home",
+		"pages/Home/details/details",
+		"pages/Home/reserve/reserve",
+		"pages/Home/payResult/payResult",
+		"pages/Home/evaluate/evaluate",
+		"pages/Order/Order",
+		"pages/Order/orderInfo/orderInfo",
+		"pages/store/store",
+		"pages/store/Commodity/Commodity",
+		"pages/store/Commodity/sayto/sayto",
+		"pages/store/Commodity/express/express",
+		"pages/store/Commodity/oneselfGet/oneselfGet",
+		"pages/store/Commodity/address/address",
+		"pages/store/Commodity/addressList/addressList",
+		"pages/Myself/Myself",
+		"pages/Myself/balance/balance",
+		"pages/Myself/balance/Account/Account",
+		"pages/Myself/balance/top-up/top-up",
+		"pages/Myself/balance/withdraw/withdraw",
+		"pages/Myself/mineInfo/mineInfo",
+		"pages/Myself/integral/integral",
+		"pages/Myself/set/set",
+		"pages/Myself/set/safe/safe",
+		"pages/Myself/set/safe/toPass/toPass",
+		"pages/Myself/set/about/about"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "",
+		"navigationBarTextStyle": "black"
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "请点击确定"
+		}
+	},
+	"tabBar": {
+		"color": "#000",
+		"backgroundColor": "#fff",
+		"selectedColor": "#007EE9",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/Home/Home",
+				"text": "首页",
+				"iconPath": "pages/images/home-icon.png",
+				"selectedIconPath": "pages/images/home-icon-xz.png"
+			},
+			{
+				"pagePath": "pages/Order/Order",
+				"text": "订单",
+				"iconPath": "pages/images/cust-icon.png",
+				"selectedIconPath": "pages/images/cust-icon-xz.png"
+			},
+			{
+				"pagePath": "pages/Myself/Myself",
+				"text": "我的",
+				"iconPath": "pages/images/my-icon.png",
+				"selectedIconPath": "pages/images/my-icon-xz.png"
+			}
+		]
+	},
+	"sitemapLocation": "sitemap.json"
+}

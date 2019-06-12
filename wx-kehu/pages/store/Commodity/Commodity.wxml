@@ -1,0 +1,81 @@
+<!-- pages/Commodity/Commodity.wxml -->
+<!-- 商品视图 -->
+<view id="headerImg">
+	<image src='{{url}}{{commodity.com_img}}' lazy-load='true'></image>
+</view>
+<!-- 兑换额度、销量、名称 -->
+<view id="body">
+	<!-- 兑换额度、销量、名称 -->
+	<view class="bodyHeader">
+		<view>
+			<text class="textT1">
+				<block wx:if="{{commodity.com_score > 0}}">{{commodity.com_score}}积分</block>
+				<block wx:if="{{commodity.com_money > 0 && commodity.com_score > 0}}">+</block>
+				<block wx:if="{{commodity.com_money > 0}}">{{commodity.com_money}}RMB</block>
+			</text>
+			<text class="small">市场价：¥{{commodity.com_discount_money}}</text>
+		</view>
+		<view>
+			<text class="textT">{{commodity.com_title}}</text>
+			<text class="lg">总销量：{{commodity.com_sales}}</text>
+		</view>
+		<text class="share iconfont icon-share">分享</text>
+	</view>
+	<!-- 发货地址 -->
+	<view class="map">
+		<view>
+			<text>发货地址</text>
+		</view>
+		<view>
+			<text>{{map}}</text>
+		</view>
+	</view>
+	<!-- 商品评价 -->
+	<view class="sayTo">
+		<view class="sayHeader">
+			<text>商品评价</text>
+		</view>
+		<!-- 遍历评论信息 -->
+		<view class="card" wx:for="{{List}}" wx:key="i">
+			<view class="cardHeader">
+				<view class="cardImg">
+					<image src="{{url}}{{item.img_url}}" lazy-load='true'></image>
+				</view>
+				<view class="cardHeaderName">
+					<text>{{item.nickName}}</text>
+					<!-- 放置评价性及信息 -->
+					<text>★★★★★</text>
+				</view>
+				<view class="time">
+					<text>{{item.time}}</text>
+				</view>
+			</view>
+			<view class="cardBodySay">
+				<text>{{item.sayto}}</text>
+			</view>
+		</view>
+		<view class="sayMore iconfont icon-more" bindtap='tosayMore'>
+			<text>查看更多评论</text>
+		</view>
+	</view>
+	<!-- 产品详情 -->
+	<view class="minfo">
+		<view class="minfoHeader">
+			<text>产品详情</text>
+		</view>
+		<view class="minfoBody">{{commodity.com_details}}</view>
+	</view>
+</view>
+<!-- g固定底部栏 -->
+<view id="footView">
+	<view>
+		<image src='{{url}}images/store/kefu.png' lazy-load='true'></image>
+		<text>联系客服</text>
+	</view>
+	<view bindtap='toExpress'>
+		<text>快速发货</text>
+	</view>
+	<view bindtap='oneselfGet'>
+		<text>门店自取</text>
+	</view>
+</view>

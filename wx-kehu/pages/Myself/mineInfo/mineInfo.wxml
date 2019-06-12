@@ -1,0 +1,30 @@
+<!-- pages/mineInfo/mineInfo.wxml -->
+<view class="lists">
+	<view class="top img">
+		头像
+		<image src="{{avatar}}" mode="aspectFill" lazy-load='true'></image>
+	</view>
+	<view class='top msg'>
+		昵称
+		<view>
+			<!-- <image src="{{url}}{{openImg}}" lazy-load='true'></image> -->
+			<text class="store-name">{{nickName}}</text>
+		</view>
+	</view>
+	<view class='msg'>
+		性别
+		<view>
+			<!-- <image src="{{url}}{{openImg}}" lazy-load='true'></image> -->
+			<text class="store-name">{{gender==1?'男':'女'}}</text>
+		</view>
+	</view>
+	<view class='msg'>
+		手机号
+		<view>
+			<button wx:if="{{!userPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+				获取手机号
+			</button>
+			<text wx:if="{{userPhone}}" class="store-name">{{userPhone}}</text>
+		</view>
+	</view>
+</view>

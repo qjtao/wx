@@ -1,0 +1,40 @@
+<!-- pages/store/Commodity/oneselfGet/oneselfGet.wxml -->
+<view>
+	<!-- 到店取货地址 -->
+	<view class='top site scroll-item flex y-center'>
+		<view class='storeSite'>
+			<view class='name'>自取店面地址</view>
+			<view>
+				<view class='place iconfont icon-place'>河南省郑州市经开区航海路</view>
+			</view>
+		</view>
+	</view>
+	<!-- 订单信息 -->
+	<view class='info'>
+		<view class='orderInfo'>订单信息</view>
+		<view class='commodity scroll-item flex x-ends y-center'>
+			<!-- 商品图片 -->
+			<image src='{{url}}images/store/2.png' lazy-load='true'></image>
+			<!-- 商品信息，积分 -->
+			<view>
+				<view>疼痛蜡灸</view>
+				<text>400积分</text>
+			</view>
+			<!-- 商品数量以及控制 -->
+			<view class='number'>
+				<view class="iconfont icon-remNum"></view>
+				<view>1</view>
+				<view class="iconfont icon-addNum"></view>
+			</view>
+		</view>
+		<!-- 合计 -->
+		<view class='total'>
+			<view>
+				合计:
+				<text class='score'>400积分</text>
+			</view>
+		</view>
+	</view>
+	<!-- 支付 -->
+	<view class='pay'>支付</view>
+</view>

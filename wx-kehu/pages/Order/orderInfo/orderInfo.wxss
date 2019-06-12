@@ -1,0 +1,449 @@
+/* pages/home/order/order.wxss */
+/* 背景色 */
+page {
+	background: rgba(237, 237, 237, 1);
+	font-size: calc(14rpx * 2);
+	font-family: PingFang-SC-Medium;
+}
+
+/* card */
+.card {
+	background: rgba(255, 255, 255, 1);
+	border-radius: calc(5rpx * 2);
+	width: calc(355rpx * 2);
+	margin: calc(10rpx * 2) auto calc(59rpx * 2);
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	padding: calc(10rpx * 2);
+	box-sizing: border-box;
+	position: relative;
+}
+
+.item {
+	display: flex;
+	height: calc(45rpx * 2);
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 1);
+}
+
+.list .item~.item {
+	border-top: 2rpx solid rgba(237, 237, 237, 1);
+}
+
+.item .light {
+	color: rgba(198, 198, 198, 1);
+}
+
+.phone .light {
+	color: rgba(0, 126, 233, 1);
+}
+
+.price .light {
+	flex: 1;
+	font-size: calc(16rpx * 2);
+	color: rgba(255, 162, 30, 1);
+	text-align: left;
+	margin-left: calc(14rpx * 2);
+}
+
+.isPay .content {
+	padding: calc(20rpx * 2) 0;
+	display: flex;
+}
+
+/* 退款进度条 */
+.isPay .progress {
+	height: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.isPay .progress .box {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.isPay .progress .box .ball {
+	width: calc(10rpx * 2);
+	height: calc(10rpx * 2);
+	border-radius: 50%;
+	margin-bottom: calc(8rpx * 2);
+	position: relative;
+}
+
+.isPay .progress .box~.box .ball::after {
+	content: "";
+	height: calc(2rpx * 2);
+	width: calc(114rpx * 2);
+	display: block;
+	position: absolute;
+	background: inherit;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.isPay .progress .start {
+	z-index: 3;
+}
+
+.isPay .progress .center {
+	z-index: 2;
+}
+
+.isPay .progress .end {
+	z-index: 1;
+}
+
+.pro {
+	background: rgba(160, 160, 160, 1);
+}
+
+.pro_suc {
+	background: rgba(78, 160, 5, 1);
+}
+
+.pro_err {
+	background: rgba(255, 0, 0, 1);
+}
+
+.isPay .progress .title {
+	font-size: calc(12rpx * 2);
+	margin-bottom: calc(4rpx * 2);
+}
+
+.isPay .progress .time {
+	font-size: calc(10rpx * 2);
+	margin-bottom: calc(8rpx * 2);
+}
+
+/* 是否支付 */
+.isPay {
+	font-size: calc(16rpx * 2);
+	height: auto;
+	display: block;
+}
+
+.isPay image {
+	width: calc(45rpx * 2);
+	height: calc(55rpx * 2);
+	position: absolute;
+	top: 0;
+	right: calc(10rpx * 2);
+}
+
+.text {
+	color: rgba(22, 21, 21, 1);
+	padding-right: calc(10rpx * 2);
+}
+
+.suc {
+	color: rgba(0, 126, 233, 1);
+}
+
+.refund {
+	color: rgba(255, 0, 0, 1);
+}
+
+.textarea,
+.voucher {
+	flex-flow: column;
+	align-items: start;
+	justify-items: center;
+	min-height: calc(135rpx * 2);
+}
+
+.textarea .title,
+.voucher .title {
+	margin: calc(13rpx * 2) 0;
+}
+
+.textarea .light1,
+.voucher .voucher_img {
+	width: 90%;
+	flex: 1;
+	margin: auto;
+	color: rgba(22, 21, 21, 1);
+}
+
+/* 图片区域 */
+.voucher {
+	height: auto;
+}
+
+.voucher .voucher_img .img {
+	width: calc(79rpx * 2);
+	height: calc(79rpx * 2);
+	margin-right: calc(10rpx * 2);
+	margin-bottom: calc(10rpx * 2);
+	position: relative;
+	float: left;
+}
+
+.voucher .voucher_img .img image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.voucher .voucher_img .img .del {
+	position: absolute;
+	width: calc(20rpx * 2);
+	height: calc(20rpx * 2);
+	border-radius: 50%;
+	top: calc(-8rpx * 2);
+	right: calc(-8rpx * 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(24rpx * 2);
+	color: rgba(255, 0, 0, 1);
+}
+
+.voucher .voucher_img .camera {
+	display: inline-block;
+	width: calc(79rpx * 2);
+	height: calc(79rpx * 2);
+	border: calc(1rpx *2) dashed rgba(198, 198, 198, 1);
+	font-size: calc(40rpx * 2);
+	color: rgba(198, 198, 198, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 底部按钮 */
+.bottom {
+	width: 100%;
+	display: flex;
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	position: fixed;
+	bottom: 0;
+}
+
+.bottom view,
+.picker .btn {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	height: calc(49rpx * 2);
+	width: 50%;
+	color: rgba(255, 255, 255, 1);
+	font-size: calc(16rpx * 2);
+}
+
+.pay {
+	background-image: linear-gradient(to right, rgba(32, 144, 253, 1), rgba(70, 118, 254, 1));
+}
+
+.remove {
+	background-color: rgba(255, 0, 0, 1);
+}
+
+/* 上拉菜单 */
+.picker.box {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	background: rgba(0, 0, 0, .5);
+	z-index: 1000;
+	visibility: hidden;
+}
+
+.picker .container {
+	height: calc(250rpx * 2);
+	width: 100%;
+	position: fixed;
+	background: rgba(255, 255, 255, 1);
+	bottom: 0;
+	left: 0;
+	transition: .5s linear;
+	transform: translateY(calc(250rpx * 2));
+	margin: 0;
+}
+
+.picker .price {
+	color: rgba(255, 162, 30, 1);
+}
+
+.picker .title {
+	display: flex;
+	height: calc(28rpx * 2);
+	align-items: center;
+	box-sizing: border-box;
+	justify-content: center;
+}
+
+.picker .container .item {
+	padding: calc(10rpx * 2);
+	border-bottom: 1rpx solid rgba(237, 237, 237, 1);
+}
+
+.picker .container .btn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.show.picker.box {
+	visibility: visible;
+}
+
+.show .container {
+	transform: translateY(0);
+}
+
+/* 单选按钮样式 */
+radio .wx-radio-input {
+	width: calc(20rpx * 2);
+	height: calc(20rpx * 2);
+	background: transparent;
+	margin-left: calc(14rpx * 2);
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+	border-radius: 50%;
+	width: calc(20rpx * 2);
+	height: calc(20rpx * 2);
+	font-size: 0;
+	color: rgba(0, 126, 233, 1);
+	background: rgba(0, 126, 233, 1);
+	border: 10rpx solid rgba(255, 255, 255, 1);
+	transform: translate(-50%, -50%) scale(1);
+	box-sizing: border-box;
+}
+
+/* 多选按钮样式 */
+checkbox .wx-checkbox-input {
+	width: calc(14rpx * 2);
+	height: calc(14rpx * 2);
+	background: transparent;
+	margin-left: calc(14rpx * 2);
+	border-color: rgba(172, 172, 172, 1);
+	border-radius: 0;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	font-size: calc(18rpx * 2);
+	color: rgba(0, 126, 233, 1);
+}
+
+/* 输入密码框 */
+.bg_layer {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 9998;
+}
+
+.input_main {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: calc(50rpx * 2);
+	border-radius: calc(10rpx * 2);
+	margin: auto;
+	width: 90%;
+	background-color: rgb(255, 255, 255);
+	z-index: 9999;
+}
+
+.input_main::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.input_title {
+	width: 100%;
+	height: calc(45rpx * 2);
+	line-height: calc(45rpx * 2);
+	text-align: center;
+	font-size: calc(16rpx * 2);
+	border-bottom: 1rpx solid rgb(226, 226, 226);
+}
+
+.input_tip {
+	margin: calc(15rpx * 2);
+	color: rgba(198, 198, 198, 1);
+}
+
+/* 密码掩码模拟 */
+.input_row {
+	width: 90%;
+	margin: 0 auto;
+	height: calc(48rpx * 2);
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.input_row .pwd_item {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	border-left: 0;
+	border: 1rpx solid rgba(198, 198, 198, 1);
+	position: relative;
+}
+
+.input_row .pwd_item:first-child {
+	border-top-left-radius: calc(10rpx * 2);
+	border-bottom-left-radius: calc(10rpx * 2);
+}
+
+.input_row .pwd_item:last-child {
+	border-top-right-radius: calc(10rpx * 2);
+	border-bottom-right-radius: calc(10rpx * 2);
+}
+
+.pwd_item+.pwd_item {
+	border-left: 0;
+}
+
+.pwd_item text {
+	width: calc(15rpx * 2);
+	height: calc(15rpx * 2);
+	border-radius: calc(15rpx * 2);
+	background-color: rgba(22, 21, 21, 1);
+}
+
+.pwd_item.now {
+	box-shadow: 0 0 0 2rpx rgba(70, 118, 254, 1);
+	z-index: 10000;
+}
+
+.forget_pwd {
+	float: right;
+	margin: calc(15rpx * 2);
+	width: 100rpx;
+	text-align: right;
+	font-size: 24rpx;
+	color: rgb(255, 120, 0);
+}
+
+/* 文本输入框位置: 设置到左边隐藏 */
+.input_control {
+	position: absolute;
+	left: -300rpx;
+	bottom: 0;
+	width: 0;
+	height: 0;
+}
+
+/* 密码输入错误提示 */
+/* .row{
+  width:50%;
+} */

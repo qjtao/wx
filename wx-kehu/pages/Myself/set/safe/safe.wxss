@@ -1,0 +1,28 @@
+/* pages/Myself/set/safe/safe.wxss */
+/* 框样式 */
+.aa {
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 1);
+	margin-top: 18rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+}
+
+/* 设置支付密码 */
+.aa text {
+	text-align: left;
+	padding-left: 50rpx;
+	color: rgba(0, 0, 0, 1);
+	font-family: PingFang-SC-Regular;
+	font-size: 28rpx;
+}
+
+/* 右侧小箭头 */
+.bb {
+	position: absolute;
+	right: 0;
+	width: 16rpx;
+	height: 28rpx;
+	margin-top: 31rpx;
+	padding-right: 20rpx;
+}

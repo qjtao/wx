@@ -1,0 +1,198 @@
+/* pages/home/evaluate/evaluate.wxss */
+page {
+	background: rgba(237, 237, 237, 1);
+	font-size: calc(14rpx * 2);
+	font-family: PingFang-SC-Medium;
+}
+
+.card {
+	background: rgba(255, 255, 255, 1);
+	border-radius: calc(5rpx * 2);
+	width: calc(355rpx * 2);
+	height: calc(114rpx * 2);
+	margin: calc(10rpx * 2) auto calc(10rpx * 2);
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	padding: calc(15rpx * 2);
+	box-sizing: border-box;
+	position: relative;
+}
+
+.header {
+	display: flex;
+}
+
+.header .img {
+	width: calc(65rpx * 2);
+	height: calc(65rpx * 2);
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.header .img image {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.header .content {
+	min-width: calc(80rpx * 2);
+	margin: 0 calc(6rpx * 2);
+}
+
+.header .content .title {
+	margin: calc(15rpx * 2) 0;
+	font-size: calc(16rpx * 2);
+}
+
+.header .content .label {
+	color: rgba(255, 255, 255, 1);
+	background: rgba(0, 126, 233, 1);
+	border-radius: calc(10rpx * 2);
+	padding: 0 calc(10rpx *2);
+	margin-bottom: calc(6rpx * 2);
+}
+
+.header .introduction {
+	width: calc(165rpx * 2);
+	margin-top: calc(10rpx * 2);
+}
+
+.header .introduction .title {
+	color: rgba(0, 0, 0, 1);
+}
+
+.header .introduction .body {
+	color: rgba(77, 76, 76, 1);
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	/** 对象作为伸缩盒子模型显示 **/
+	-webkit-box-orient: vertical;
+	/** 设置或检索伸缩盒对象的子元素的排列方式 **/
+	-webkit-line-clamp: 2;
+	/** 显示的行数 **/
+	overflow: hidden;
+	/** 隐藏超出的内容 **/
+}
+
+.main {
+	height: auto;
+}
+
+.main .textarea {
+	width: 100%;
+	height: calc(100rpx * 2);
+}
+
+.main .textarea_placeholder {
+	color: rgba(198, 198, 198, 1);
+}
+
+.main .imgs {
+	width: 100%;
+	height: auto;
+}
+
+.main .imgs::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.main .imgs .item {
+	width: calc(54rpx * 2);
+	height: calc(54rpx * 2);
+	/* display: inline-block; */
+	margin-left: calc(16rpx * 2);
+	margin-bottom: calc(10rpx * 2);
+	position: relative;
+	float: left;
+}
+
+.main .imgs .camera {
+	border: calc(1rpx *2) dashed rgba(198, 198, 198, 1);
+	font-size: calc(30rpx * 2);
+	color: rgba(198, 198, 198, 1);
+	text-align: center;
+	line-height: calc(54rpx * 2);
+}
+
+.main .imgs .img image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.main .imgs .img .del {
+	position: absolute;
+	width: calc(20rpx * 2);
+	height: calc(20rpx * 2);
+	border-radius: 50%;
+	top: calc(-8rpx * 2);
+	right: calc(-8rpx * 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(24rpx * 2);
+	color: rgba(255, 0, 0, 1);
+}
+
+.score {
+	width: calc(355rpx * 2);
+	margin: calc(20rpx * 2) auto calc(10rpx * 2);
+	padding: 0 calc(15rpx * 2);
+	box-sizing: border-box;
+	position: relative;
+}
+
+.score .title {
+	margin-bottom: calc(20rpx * 2);
+}
+
+.score .list {
+	margin-bottom: calc(17rpx * 2);
+}
+
+.score .list view {
+	margin-right: calc(10rpx * 2);
+	display: inline-block;
+}
+
+.score .list .itemtitle {
+	color: rgba(0, 0, 0, 1);
+	font-size: calc(16rpx * 2);
+	font-weight: 500;
+}
+
+.score .list .itemstars {
+	color: rgba(198, 198, 198, 1);
+	margin-right: calc(6rpx * 2);
+	font-size: calc(20rpx * 2);
+}
+
+.score .list .itemstars.light {
+	color: rgba(245, 132, 40, 1);
+}
+
+.score .list .itemscore {
+	color: rgba(0, 0, 0, 1);
+	font-size: calc(16rpx * 2);
+	font-weight: 500;
+	margin-left: calc(10rpx * 2);
+}
+
+.score .list .itemscore .sm {
+	font-size: calc(10rpx * 2);
+}
+
+.btn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: calc(49rpx * 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient(to right, rgba(32, 144, 253, 1), rgba(70, 118, 254, 1));
+	color: rgba(255, 255, 255, 1);
+	font-size: calc(16rpx * 2);
+}

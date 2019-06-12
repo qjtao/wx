@@ -1,0 +1,23 @@
+<!-- pages/Myself/store_info/store_info.wxml -->
+<view class="lists">
+	<view class='top msg'>
+		店铺名称
+		<view>
+			<text class="store-name">{{store_name}}</text>
+		</view>
+	</view>
+	<view class='msg'>
+		联系电话
+		<view bindtap='toPhones' data-phone='{{store_phone}}'>
+			<text class="store-name">{{store_phone}}</text>
+		</view>
+	</view>
+	<view class='msg'>
+		店铺地址
+		<view>
+			<button id="0" bindtap="listenerBtnGetLocation" class="store-name txt_color">
+				{{store_site}}
+			</button>
+		</view>
+	</view>
+</view>

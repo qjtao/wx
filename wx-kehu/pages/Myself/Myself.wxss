@@ -1,0 +1,125 @@
+/* pages/Myself/Myself.wxss */
+page {
+	background: rgba(237, 237, 237, 1);
+}
+
+#Header_q {
+	width: 720rpx;
+	margin-bottom: 20rpx;
+	box-sizing: border-box;
+	height: 260rpx;
+	margin: 20rpx auto;
+	border-radius: 10rpx;
+	background: rgb(255, 255, 255);
+}
+
+/* 素材背景图开启服务器操作 */
+.Header_bg {
+	width: 710rpx;
+	margin: 0 auto;
+	display: flex;
+	background-size: 90% 100%;
+	flex-flow: row nowrap;
+	border-radius: 10rpx;
+	position: relative;
+}
+
+.text_user {
+	height: 30rpx;
+	margin: 180rpx auto;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	color: #000000;
+}
+
+.text_user button {
+	font-size: 26rpx;
+}
+
+.avatar_q {
+	margin: 30rpx auto;
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 50%;
+	box-shadow: 0 0 20rpx rgba(11, 188, 194, 0.315),
+		0 0 20rpx rgb(255, 255, 255),
+		0 0 200rpx rgb(255, 255, 255);
+}
+
+.avatar {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.img {
+	width: 40rpx;
+	height: 38rpx;
+	margin: 24rpx 24rpx 22rpx;
+	box-sizing: border-box;
+}
+
+.img>image {
+	margin-bottom: 24rpx;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.nav_li {
+	display: flex;
+	height: 90rpx;
+	line-height: 90rpx;
+	text-align: left;
+	flex-flow: row nowrap;
+	border-bottom: 1rpx solid #FFEDEDED;
+	font-family: PingFang-SC-Regular;
+}
+
+.text_1,
+.text_2 {
+	font-size: 28rpx;
+}
+
+.text_2 {
+	text-align: right;
+	position: absolute;
+	right: 60rpx;
+	color: rgba(172, 172, 172, 1);
+}
+
+.map_q {
+	color: rgba(172, 172, 172, 1);
+	position: absolute;
+	right: 22rpx;
+}
+
+#nav_q {
+	padding-top: 20rpx;
+	border-radius: 10rpx;
+	background: #FFFFFF;
+}
+
+/* 获取用户恓 */
+.user {
+	width: 200rpx;
+	position: fixed;
+}
+
+button {
+	background: none;
+	padding: 0;
+	margin: 0;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+button::after {
+	background-color: none;
+	border: none;
+}
+
+.button-hover {
+	background-color: none !important;
+	color: none;
+}

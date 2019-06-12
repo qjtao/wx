@@ -1,0 +1,52 @@
+<!-- pages/store/Commodity/express/express.wxml -->
+<view class="top">
+	<!-- <view style='width:100%;height:20rpx;background:#EDEDED;'></view> -->
+	<!-- 下单客户个人信息以及地址 -->
+	<view class='site scroll-item flex y-center iconfont icon-place' bindtap='toSite'>
+		<view>
+			<view>
+				<text class='name'>徐洋</text>
+				<text class='phone'>13258587888</text>
+			</view>
+			<view class='place'>河南省郑州市东新区路</view>
+		</view>
+	</view>
+	<!-- 订单信息 -->
+	<view class='info'>
+		<view class='orderInfo'>订单信息</view>
+		<view class='commodity scroll-item flex x-ends y-center'>
+			<!-- 商品图片 -->
+			<image src='{{url}}images/store/2.png' lazy-load='true'></image>
+			<!-- 商品信息，积分 -->
+			<view>
+				<view>疼痛蜡灸</view>
+				<text>{{score}}积分</text>
+			</view>
+			<!-- 商品数量以及控制 -->
+			<view class='number'>
+				<view class="stepper">
+					<!-- 减号 -->
+					<text class="iconfont icon-remNum {{minusStatus}}" bindtap="bindMinus"></text>
+					<!-- 数值 -->
+					<input type="text" bindchange="bindManual" bindinput='numValue' value="{{num}}" />
+					<!-- 加号 -->
+					<text class="normal iconfont icon-addNum {{addStatus}}" bindtap="bindPlus"></text>
+				</view>
+			</view>
+		</view>
+		<!-- 配送 -->
+		<view class='delivery flex x-ends y-center'>
+			<view>配送费</view>
+			<view>￥5.00</view>
+		</view>
+		<!-- 合计 -->
+		<view class='total'>
+			<view>
+				合计:
+				<text class='score'>{{totalScore}}积分+￥5.00</text>
+			</view>
+		</view>
+	</view>
+	<!-- 支付 -->
+	<view class='pay'>支付</view>
+</view>

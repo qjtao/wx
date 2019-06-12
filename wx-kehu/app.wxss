@@ -1,0 +1,94 @@
+/**app.wxss**/
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+@import "iconfont.wxss";
+
+page {
+	background-color: #ededed;
+}
+
+view,
+image,
+text,
+navigator {
+	/* box-sizing: border-box; */
+	padding: 0;
+	margin: 0;
+}
+
+/* 距上方20rpx */
+.top {
+	margin-top: 20rpx;
+}
+
+.pt {
+	padding-top: 20rpx;
+}
+
+/*flex布局*/
+.flex {
+	display: flex;
+}
+
+.x-y {
+	flex-direction: column;
+}
+
+.x-wrap {
+	flex-wrap: wrap;
+}
+
+.x-center {
+	justify-content: center;
+}
+
+.y-center {
+	align-items: center;
+}
+
+.y-line {
+	align-items: baseline;
+}
+
+.xy-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.xend {
+	justify-content: flex-end;
+}
+
+.x-ends {
+	justify-content: space-between;
+}
+
+.y-ends {
+	align-content: space-between;
+}
+
+.x-around {
+	justify-content: space-around;
+}
+
+.y-around {
+	align-content: space-around;
+}
+
+.xy-around {
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}
+
+.line {
+	width: 100%;
+	border-bottom: 1rpx solid #EDEDED;
+}

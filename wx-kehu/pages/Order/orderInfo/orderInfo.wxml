@@ -1,0 +1,179 @@
+<!-- pages/Order/order/order.wxml -->
+<view class='card list'>
+	<block wx:if="{{!state.isRefund}}">
+		<view class='item isPay'>
+			<view class="content">
+				<view class='title {{state.isRefund ? "refund" : "suc"}}'>{{state.title}}</view>
+				<image src='{{state.img}}' lazy-load='true' />
+			</view>
+		</view>
+		<view class='item'>
+			<view class='title'>患者姓名</view>
+			<view class='light'>{{order.pname}}</view>
+		</view>
+		<view class='item'>
+			<view class='title'>年龄</view>
+			<view class='light'>{{order.page}}</view>
+		</view>
+		<view class='item phone'>
+			<view class='title'>联系电话</view>
+			<view class='light'>{{order.phone}}</view>
+		</view>
+		<view class='item'>
+			<view class='title'>预约科室</view>
+			<view class='light'>{{order.office}}</view>
+		</view>
+		<view class='item'>
+			<view class='title'>预约医生</view>
+			<view class='light'>{{order.doctor}}</view>
+		</view>
+		<view class='item'>
+			<view class='title'>挂号时间</view>
+			<view class='light'>{{order.time}}</view>
+		</view>
+		<view class='item'>
+			<view class='title'>店铺地址</view>
+			<view class='light'>{{order.site}}</view>
+		</view>
+		<view class='item price'>
+			<view class='title'>费用</view>
+			<view class='light'>¥{{order.price}}</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class='item isPay'>
+			<view class="content">
+				<view class='title {{state.isRefund ? "refund" : ""}}'>{{state.title}}</view>
+				<image src='{{state.img}}' lazy-load='true' />
+			</view>
+			<view class="progress" wx:if='{{!state.goRefund}}'>
+				<view class="box start">
+					<view class="ball pro_suc"></view>
+					<view class="title">{{progress.start.title}}</view>
+					<view class="time">{{progress.start.time}}</view>
+				</view>
+				<view class="box center">
+					<view class="ball pro_suc"></view>
+					<view class="title">{{progress.center.title}}</view>
+					<view class="time">{{progress.center.time}}</view>
+				</view>
+				<view class="box end">
+					<view class="ball {{order.state == '5' ? 'pro' : order.state == '6' ? 'pro_suc' : order.state == '7' ? 'pro_err' : 'pro'}}"></view>
+					<view class="title">{{progress.end.title}}</view>
+					<view class="time">{{progress.end.time}}</view>
+				</view>
+			</view>
+		</view>
+		<view class='item'>
+			<view class='title'>退款类型</view>
+			<view class='light {{refund.type == "" ? "iconfont icon-downarrow" : ""}}' bindtap='showPicker'>
+				<block wx:if='{{refund.type == ""}}'>请选择</block>
+				{{refund.type}}
+			</view>
+		</view>
+		<view class='item'>
+			<view class='title'>退款金额</view>
+			<view class='light'>
+				<text class="text">{{refund.money}}</text>
+				元
+			</view>
+		</view>
+		<view class='item phone'>
+			<view class='title'>联系电话</view>
+			<view class='light'>{{refund.phone}}</view>
+		</view>
+		<view class='item textarea'>
+			<view class='title'>退款原因</view>
+			<textarea wx:if="{{state.goRefund}}" class="light1" value="{{refund.value}}" placeholder="请填写退款原因" placeholder-class="light"
+			 maxlength="140" bindblur='textareaBlur'></textarea>
+			<view wx:else class="light1">{{refund.value}}</view>
+		</view>
+		<view class='item voucher'>
+			<view class='title' wx:if="{{state.goRefund}}">
+				上传凭证
+				<text class="light">(最多可上传9张,长按可删除)</text>
+			</view>
+			<view class='title' wx:else>退款凭证</view>
+			<view class='light voucher_img'>
+				<view class="img" wx:for="{{refund.imgs}}" wx:key="index">
+					<image src="{{item}}" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindtap="previewImage"
+					 data-i='{{index}}' mode="aspectFit|aspectFill|widthFix" lazy-load="true"></image>
+					<view class="del iconfont icon-error" catchtap="delImage" data-i='{{index}}' wx:if="{{isShowDel}}"></view>
+				</view>
+				<view wx:if='{{state.goRefund && refund.imgs.length < 9}}' class="camera iconfont icon-camera" bindtap="chooseImage"></view>
+			</view>
+		</view>
+	</block>
+</view>
+<!-- 底部按钮 -->
+<view class='bottom btn'>
+	<view wx:if='{{state.goCancel}}' bindtap='cancelOrder' class='remove'>取消订单</view>
+	<view wx:if='{{state.goPay}}' bindtap='showPicker' class='pay'>缴费</view>
+	<view wx:if='{{state.goRefund}}' bindtap='applyRefund' class='remove'>提交申请</view>
+	<view wx:if='{{state.stopRefund}}' bindtap='cancelRefund' class='remove'>取消退款</view>
+	<view wx:if='{{state.goBack}}' bindtap='goBack' class='pay'>返回</view>
+	<view wx:if='{{state.goComment}}' bindtap='goComment' class='pay'>去评价</view>
+</view>
+<!-- 上拉菜单 -->
+<view class='picker box {{pickerShow ? "show" : ""}}' bindtap='hidePicker'>
+	<view class='container list' catchtap='showPicker'>
+		<block wx:if='{{!state.goRefund}}'>
+			<radio-group bindchange="radioChange">
+				<view class='item'>
+					<view class='title'>应付金额：</view>
+					<view class='price'>￥{{order.price}}</view>
+				</view>
+				<label class='item'>
+					<view class='title'>账户余额：</view>
+					<view class='price'>
+						￥{{user.balance}}
+						<radio value='surplus' color='rgba(172, 172, 172, 1)' />
+					</view>
+				</label>
+				<label class='item'>
+					<view class='title'>微信</view>
+					<view class='price'>
+						<radio value='wexin' color='rgba(172, 172, 172, 1)' />
+					</view>
+				</label>
+				<view class='btn pay' catchtap='goPay'>支付</view>
+			</radio-group>
+		</block>
+		<block wx:else>
+			<checkbox-group>
+				<view class="title">退款类型</view>
+				<view class='item' wx:for="{{typeList}}" wx:key="index">
+					<view class='title'>{{item.title}}</view>
+					<view class='price'>
+						<checkbox catchtap='checktype' data-value='{{item.value}}' value='{{item.value}}' checked="{{item.checked}}"
+						 color='rgba(172, 172, 172, 1)' />
+					</view>
+				</view>
+				<view class='btn remove' catchtap='hidePicker'>关闭</view>
+			</checkbox-group>
+		</block>
+	</view>
+</view>
+<!-- 密码输入框 -->
+<view class='bg_layer' catchtap='hidePayLayer' wx:if='{{payPwdInput}}'>
+	<view class='input_main' catchtap='showPayLayer'>
+		<view class='input_title'>
+			<text>输入支付密码</text>
+		</view>
+		<view class='input_tip'>
+			<text>请输入6位数的支付密码</text>
+		</view>
+		<view class='input_row' catchtap='getFocus'>
+			<block wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+				<view class='pwd_item {{!!user.pwdVal.length == "" && i == 0 && payFocus ? "now" : user.pwdVal.length == i && payFocus ? "now" : ""}}'>
+					<text wx:if='{{user.pwdVal.length > i}}'></text>
+				</view>
+			</block>
+		</view>
+		<view>
+			<view class='forget_pwd' catchtap='forgetPwd'>忘记密码</view>
+		</view>
+		<input class='input_control' value="{{user.pwdVal}}" password type='number' focus='{{payFocus}}' bindinput='inputPwd'
+		 maxlength='6' />
+	</view>
+</view>

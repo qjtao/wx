@@ -1,0 +1,62 @@
+<!-- pages/Home/details/details.wxml -->
+<view class='card header'>
+	<!-- 上部标签 -->
+	<view class='top'>
+		<view class='img'>
+			<image src='{{details.img_url}}' />
+		</view>
+		<view class='content'>
+			<view class='title'>{{details.name}}</view>
+			<view class='body'>
+				{{details.job}}
+				<block wx:for="{{details.label}}" wx:key="{{index}}">
+					<text class='label' wx:if="{{index < 2}}">{{item.office_name}}</text>
+				</block>
+			</view>
+		</view>
+	</view>
+	<!-- 简介内容 -->
+	<view class='introduction'>
+		<view class='title'>简介:</view>
+		<view class='body'>
+			<view class='{{showIntr ? "last":""}}'>{{details.introduction}}</view>
+		</view>
+	</view>
+	<view class='btn' bindtap='showIntrs'>{{showIntr ? '展开':'合并'}}</view>
+</view>
+<view class='card buttom {{classList.length>0 ? "" : "none"}}'>
+	<!-- card头部 -->
+	<view class='header'>
+		<text class='title'>挂号日期</text>
+		<text class='body'>{{date}}</text>
+	</view>
+	<!-- 日期 -->
+	<view class='date'>
+		<block wx:for='{{dateList}}' wx:key='index'>
+			<view class='dateList' bindtap='dateChange' data-date='{{item.date}}'>
+				<view class='body week {{item.date == date ? "active":""}}'>{{item.week}}</view>
+				<view class='day {{item.date == date ? "active":""}}'>{{item.day}}</view>
+			</view>
+		</block>
+	</view>
+	<!-- 内容 -->
+	<view class='content' wx:if='{{classList.length>0}}'>
+		<view class='box'>
+			<view>
+				剩余预约：
+				<text class='{{nowList.num != 0 ? "primary" : "danger"}}'>{{nowList.num}}</text>
+			</view>
+			<view class='price'>¥{{nowList.price}}</view>
+		</view>
+		<view class="orderBox">
+			<block wx:for="{{classList}}" wx:key="index">
+				<view class='order {{item.id == nowList.id ?"active":""}}' bindtap='listChange' data-id='{{item.id}}' data-num='{{item.num}}'
+				 data-time='{{item.time}}' data-price='{{item.price}}' data-name='{{item.name}}' data-img='{{item.img}}'>
+					{{item.name}}
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class='content' wx:else>未找到对应班排</view>
+</view>
+<view class='botton' bindtap='reserveJump'>预约</view>

@@ -1,0 +1,50 @@
+<!-- pages/Home/evaluate/evaluate.wxml -->
+<view class='card header'>
+	<!-- 上部标签 -->
+	<view class='img'>
+		<image src='{{doctor.img_url}}' />
+	</view>
+	<view class='content'>
+		<view class='title'>{{doctor.name}}</view>
+		<view class='body'>
+			<block wx:for="{{doctor.label}}" wx:key="{{index}}">
+				<view class='label' wx:if="{{index < 1}}">{{item.office_name}}</view>
+			</block>
+		</view>
+	</view>
+	<!-- 简介内容 -->
+	<view class='introduction'>
+		<text class='body'>
+			<text class='title'>简介:</text>
+			{{doctor.introduction}}
+		</text>
+	</view>
+</view>
+<view class="card main">
+	<textarea class="textarea" value="{{evaluate.value}}" placeholder="{{evaluate.placeholder}}" placeholder-class="textarea_placeholder"
+	 maxlength="140" bindblur="textareablur"></textarea>
+	<view class="imgs">
+		<view class="item img" wx:for="{{evaluate.imgs}}" wx:key="index">
+			<image src="{{item}}" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindtap="previewImage" data-i='{{index}}'
+			 mode="aspectFit|aspectFill|widthFix" lazy-load="true"></image>
+			<view class="del iconfont icon-error" catchtap="delImage" data-i='{{index}}' wx:if="{{isShowDel}}"></view>
+		</view>
+		<view class="item camera iconfont icon-camera" bindtap='chooseImage' data-sourcetype='camera'></view>
+		<view class="item camera iconfont icon-album" bindtap='chooseImage' data-sourcetype='album'></view>
+	</view>
+</view>
+<view class="score">
+	<view class="title">为我们评分</view>
+	<view class="list" wx:for="{{scorelist}}" wx:key="index" wx:for-index="scoreList">
+		<view class="itemtitle">{{item.title}}</view>
+		<block wx:for="{{stars}}" wx:key="i" wx:for-item="starsItem">
+			<view class="itemstars iconfont icon-star {{item.score >= starsItem.score ? 'light' : ''}}" data-list='{{scoreList}}'
+			 data-score='{{starsItem.score}}' bindtap='scoreChange'></view>
+		</block>
+		<view class="itemscore">
+			{{item.score}}
+			<view class="sm">分</view>
+		</view>
+	</view>
+</view>
+<view class="btn" bindtap='submit'>提交</view>

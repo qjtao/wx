@@ -1,0 +1,136 @@
+<!-- pages/store/store.wxml -->
+<view>
+	<!-- 插入选项卡 -->
+	<view class='topTabSwiper'>
+		<block wx:for="{{titleList}}" wx:key="index">
+			<view class='tab  {{currentData == index ? "tabBorer" : ""}}' data-current="{{index}}" bindtap='checkCurrent'>
+				{{item}}
+			</view>
+		</block>
+	</view>
+	<swiper current="{{currentData}}" class='swiper' style="height:{{height}}rpx" duration="300" bindchange="bindchange">
+		<!-- 首页start -->
+		<swiper-item>
+			<view class='swiper_con'>
+				<!-- 主banner图 -->
+				<view class='banner'>
+					<image src='{{url}}images/store/banner.jpg' lazy-load='true'></image>
+				</view>
+			</view>
+			<!-- 推荐产品 -->
+			<view class='recommend'>
+				<text>推荐产品</text>
+				<!-- 推荐产品图 -->
+				<view class='productImg scroll-item flex x-ends y-center'>
+					<view wx:for="{{productImg}}" wx:key="index">
+						<image src='{{url}}{{item.img_url}}' lazy-load='true'></image>
+					</view>
+				</view>
+			</view>
+			<!-- 产品列表 -->
+			<view class='prolist'>
+				<block wx:for="{{proList1}}" wx:key="index">
+					<navigator url='/pages/store/Commodity/Commodity?com_id={{item.com_id}}&title={{item.com_name}}' class="scroll-item flex x-ends y-center">
+						<image src="{{url}}{{item.com_img}}" mode="aspectFit" lazy-load='true'></image>
+						<view class="item-middle">
+							<view class="title">{{item.com_title}}</view>
+							<view class='introduce'>{{item.com_details}}</view>
+						</view>
+						<view class='score'>
+							<view>{{item.com_score}}积分</view>
+							<text>总销量：{{item.com_number}}</text>
+						</view>
+					</navigator>
+				</block>
+			</view>
+		</swiper-item>
+		<!-- 首页end -->
+		<!-- 分类start -->
+		<swiper-item>
+			<!-- <view class='swiper_con'> -->
+			<!-- 产品列表 -->
+			<view class='prolist'>
+				<block wx:for="{{proList2}}" wx:key="index">
+					<navigator url='/pages/store/Commodity/Commodity?com_id={{item.com_id}}&title={{item.com_name}}' class="scroll-item flex x-ends y-center">
+						<image src="{{url}}{{item.com_img}}" mode="aspectFit" lazy-load='true'></image>
+						<view class="item-middle">
+							<view class="title">{{item.com_title}}</view>
+							<view class='introduce'>{{item.com_details}}</view>
+						</view>
+						<view class='score'>
+							<view>{{item.com_score}}积分</view>
+							<text>总销量：{{item.com_number}}</text>
+						</view>
+					</navigator>
+				</block>
+			</view>
+			<!-- </view> -->
+		</swiper-item>
+		<!-- 分类end -->
+		<!-- 分类start -->
+		<swiper-item>
+			<view class='swiper_con'>
+				<!-- 产品列表 -->
+				<view class='prolist'>
+					<block wx:for="{{proList3}}" wx:key="index">
+						<navigator url='/pages/store/Commodity/Commodity?com_id={{item.com_id}}&title={{item.com_name}}' class="scroll-item flex x-ends y-center">
+							<image src="{{url}}{{item.com_img}}" mode="aspectFit" lazy-load='true'></image>
+							<view class="item-middle">
+								<view class="title">{{item.com_title}}</view>
+								<view class='introduce'>{{item.com_details}}</view>
+							</view>
+							<view class='score'>
+								<view>{{item.com_score}}积分</view>
+								<text>总销量：{{item.com_number}}</text>
+							</view>
+						</navigator>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+		<!-- 分类start -->
+		<!-- 订单start -->
+		<swiper-item>
+			<view class='swiper_con'>
+				<view class='prolist'>
+					<block wx:for="{{proList4}}" wx:key="index">
+						<navigator url='/pages/store/?so_id={{item.so_id}}&com_o_state={{item.com_o_state}}' class="order scroll-item">
+							<view class='status' wx:if="{{item.com_o_state==0}}">待付款</view>
+							<view class='status' wx:if="{{item.com_o_state==1}}">待评价</view>
+							<view class='status' wx:if="{{item.com_o_state==2}}">已完成</view>
+							<view class='status' wx:if="{{item.com_o_state==3}}">已发货</view>
+							<view class='card-top  flex x-ends y-center'>
+								<image src="{{url}}{{item.img_url}}" mode="aspectFit" lazy-load='true'></image>
+								<view class="item-middle">
+									<view class="title">{{item.title}}</view>
+									<view class='introduce'>X{{item.com_o_number}}</view>
+								</view>
+								<view class="score o">
+									<view>
+										<block wx:if="{{item.com_o_score > 0}}">
+											{{item.com_o_score}}积分
+										</block>
+										<block wx:if="{{item.com_o_score > 0 && item.com_o_money > 0}}">
+											+
+										</block>
+										<block wx:if="{{item.com_o_money > 0}}">
+											{{item.com_o_money}}RMB
+										</block>
+									</view>
+								</view>
+							</view>
+							<view class='card-bottom'>
+								<view class='time'>下单时间:{{item.com_o_time}}</view>
+								<view class="appraise" wx:if="{{item.com_o_state==0}}">去支付</view>
+								<view class="appraise" wx:if="{{item.com_o_state==1}}">去评价</view>
+								<view class="appraise" wx:if="{{item.com_o_state==2}}">查看订单</view>
+								<view class="appraise" wx:if="{{item.com_o_state==3}}">物流详情</view>
+							</view>
+						</navigator>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+		<!-- 订单end -->
+	</swiper>
+</view>

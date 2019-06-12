@@ -1,0 +1,27 @@
+<!-- index.wxml -->
+<view class="container">
+	<view class="userinfo">
+		<block>
+			<image class="userinfo-avatar avatarUtoo" src="{{userInfo.avatarUrl==null?logo:userInfo.avatarUrl}}" lazy-load='true'></image>
+		</block>
+	</view>
+</view>
+<view id="saytoUser">
+	<view class="open">
+		<text>{{userInfo.nickName}}</text>
+		<text class="Afont">{{saytoUser}}</text>
+
+		<text class="Afont">\n</text>
+		<text class="clickGo" wx:if="{{userInfo.nickName}}" bindtap='toHome'>进入</text>
+		<button class="aa" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+			授权登录
+		</button>
+	</view>
+</view>
+<view class="theshy">
+	<text wx:if='{{userInfo.nickName}}'>技术支持：汇国网络部研发团队</text>
+	<text wx:if='{{userInfo.nickName}}'>版本号：1.0.0</text>
+</view>
+<!-- p13 -->
+<!-- <text class="Afont">济回堂连锁门诊欢迎您</text> -->
+<!-- <text wx:if='{{userInfo.nickName}}' bindtap='toAbout'>关于我们</text> -->

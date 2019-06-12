@@ -1,0 +1,49 @@
+<!-- pages/store/address/address.wxml -->
+<form bindsubmit="saveAddress">
+	<!-- 收货人 -->
+	<view class="weui-cell weui-cell_input">
+		<view class="weui-cell__hd">
+			<view class="weui-label left-size">联系人</view>
+		</view>
+		<view class="weui-cell__bd">
+			<input class="weui-input" name="consignee" placeholder="姓名" placeholder-class="placeholderStyle" />
+		</view>
+	</view>
+	<!-- 手机号 -->
+	<view class="weui-cell weui-cell_input">
+		<view class="weui-cell__hd">
+			<view class="weui-label left-size">手机号码</view>
+		</view>
+		<view class="weui-cell__bd">
+			<input class="weui-input" name="mobile" placeholder="手机号" placeholder-class="placeholderStyle" />
+		</view>
+	</view>
+	<view class="weui-cells__title"></view>
+	<view class="weui-cells weui-cells_after-title">
+		<!-- 选择收货地址 -->
+		<view class='selectSite'>
+			<view class="weui-cell__hd">
+				<view class="weui-label left-size">所在地区</view>
+			</view>
+			<view bindtap='chooseAddress' class='select'>
+				<text>{{province == ''?'选择地址':province + '-' + city + '-' + area}}</text>
+			</view>
+		</view>
+		<nyz_area_picker show="{{show}}" bind:sureSelectArea="sureSelectAreaListener"></nyz_area_picker>
+		<view class="weui-cell weui-cell_input">
+			<view class="weui-cell__hd">
+				<view class="weui-label left-size details-site">详细地址</view>
+			</view>
+		</view>
+		<view class="weui-cell__bd" style='padding:0 30rpx;'>
+			<textarea bindblur=''></textarea>
+		</view>
+	</view>
+	<!-- 设置是否为默认地址 -->
+	<view>
+		<checkbox></checkbox>
+		<text>设为默认地址</text>
+	</view>
+	<!--  -->
+	<button class="weui-btn" type="primary" form-type="submit">保存</button>
+</form>

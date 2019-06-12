@@ -1,0 +1,50 @@
+<!-- pages/home/reserve/reserve.wxml -->
+<!-- 患者信息 -->
+<view class='info list'>
+	<view class='item'>
+		<view class='title'>患者姓名</view>
+		<view class='input'>
+			<input bindblur='nameChange' value='{{patient.name}}' placeholder='请输入患者姓名' placeholder-class='light' />
+		</view>
+	</view>
+	<view class='item'>
+		<view class='title'>年龄</view>
+		<view class='input'>
+			<input bindblur='ageChange' value='{{patient.age}}' placeholder='请输入患者年龄' placeholder-class='light' type='number' />
+		</view>
+	</view>
+	<view class='item'>
+		<view class='title'>联系电话</view>
+		<view class='input'>
+			<input bindblur='phoneChange' value='{{patient.phone}}' placeholder='请输入您的手机号' placeholder-class='light' type='number' />
+		</view>
+	</view>
+</view>
+<!-- 预约信息 -->
+<view class='infoTitle'>预约信息</view>
+<view class='docinfo list'>
+	<view class='item'>
+		<view class='title'>预约项目</view>
+		<view class='light'>{{info.office}}</view>
+	</view>
+	<view class='item'>
+		<view class='title'>预约医生</view>
+		<view class='light'>{{info.doctor}}</view>
+	</view>
+	<view class='item'>
+		<view class='title'>预约时间</view>
+		<view class='light'>{{info.time}}</view>
+	</view>
+	<view class='item'>
+		<view class='title'>预约费用</view>
+		<view class='price'>¥{{info.price}}</view>
+	</view>
+</view>
+<!-- 底部支付 -->
+<view class='bottom'>
+	<view>
+		待支付：
+		<view class='price'>￥{{info.price}}</view>
+	</view>
+	<view class='btn' bindtap='submit'>提交订单</view>
+</view>

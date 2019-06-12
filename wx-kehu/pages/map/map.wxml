@@ -1,0 +1,14 @@
+<view bindtap='toMap'>点击设置地址</view>
+<view bindtap='toPhone' data-phone='{{phone}}'>打电话{{phone}}</view>
+<view bindtap='toVib'>点击震动</view>
+<view bindtap='toAppid'>当前小程序Appid</view>
+
+<button bindtap='getOpenIdTap'>获取用户唯一标识openid</button>
+<text>openid:{{openid}}\n </text>
+<text>session_key:{{session_key}}</text>
+<view bindtap='getOpenid'>openid</view>
+<view><button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机</button></view>
+
+
+<view bindtap='pay'>支付一块钱</view>
+<!-- <view bindtap='toZhuan'>转发</view> -->

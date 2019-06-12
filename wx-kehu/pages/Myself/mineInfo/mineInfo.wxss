@@ -1,0 +1,30 @@
+/* pages/mineInfo/mineInfo.wxss */
+.img {
+	display: block;
+	padding: 0 20rpx;
+	font-size: 28rpx;
+	margin-bottom: 2rpx;
+	height: 140rpx;
+	line-height: 140rpx;
+}
+
+.img image {
+	float: right;
+	width: 110rpx;
+	height: 110rpx;
+	border-radius: 50%;
+}
+
+.lists view {
+	padding: 10rpx 20rpx;
+	background: white;
+	font-size: 28rpx;
+	margin-bottom: 2rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.store-name {
+	color: #ACACAC;
+}

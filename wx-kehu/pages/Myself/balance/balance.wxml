@@ -1,0 +1,36 @@
+<!-- pages/Myself/balance/balance.wxml -->
+<!-- pages/general/balance/balance.wxml -->
+<view>
+	<view class='top-bg'>
+		<!-- 蓝色渐变背景 -->
+		<view class='bg linear-gradient'>
+			<!-- 账户余额 -->
+			<view>账户余额(元)</view>
+			<view>{{money}}</view>
+			<image class='rmb' src='{{url}}images/RMB.png' lazy-load='true'></image>
+		</view>
+	</view>
+	<!-- 充值 -->
+	<navigator url='/pages/Myself/balance/top-up/top-up' class="msg mb-2 top">
+		<image class='left-icon' src='{{url}}images/take_out.png' lazy-load='true'></image>
+		<text>充值</text>
+		<view>
+			<image src="{{url}}images/open.png" lazy-load='true'></image>
+		</view>
+	</navigator>
+	<!-- 提现 -->
+	<!-- <navigator url='/pages/Myself/balance/withdraw/withdraw' class="msg mb-2">
+		<image class='left-icon' src='{{url}}images/top_up.png' lazy-load='true'></image>
+		<text>提现</text>
+		<view>
+			<image src="{{url}}images/open.png" lazy-load='true'></image>
+		</view>
+	</navigator> -->
+	<navigator url='/pages/Myself/balance/Account/Account' class="msg mb-2">
+		<image class='left-icon' src='{{url}}images/detail.png' lazy-load='true'></image>
+		<text>明细</text>
+		<view>
+			<image src="{{url}}images/open.png" lazy-load='true'></image>
+		</view>
+	</navigator>
+</view>

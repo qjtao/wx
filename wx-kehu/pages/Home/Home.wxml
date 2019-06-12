@@ -1,0 +1,115 @@
+<!-- 蓝湖 客户端主页 ｛主营项目、名医荟萃、轮播｝ -->
+<view class="headerStore" hover-class="none" hover-stop-propagation="false">
+	<navigator class="" target="" url="/pages/Maps/Maps?name={{store_name}}" hover-class="navigator-hover" open-type="navigate">
+		<view class="leftSearch" hover-class="none" hover-stop-propagation="false">
+			当前店铺：{{store_name}}
+			<!-- 店铺信息 -->
+		</view>
+		<view class="rightSearch iconfont icon-downarrow" hover-class="none" hover-stop-propagation="false">
+			更换店铺
+			<!-- {{store_name}} -->
+		</view>
+	</navigator>
+</view>
+<view id="header_q">
+	<view class="banner">
+		<swiper class="ss" autoplay interval="3500" circular indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActivecolor}}"
+		 current="{{currentSwiper}}" bindchange="swiperChange">
+			<swiper-item wx:for="{{List}}" wx:key="i">
+				<image class="boxshadow" src="{{url}}{{item.img_url}}" lazy-load='true'></image>
+			</swiper-item>
+		</swiper>
+		<!-- 增加轮播卡小圆点 -->
+		<view class="dots">
+			<block wx:for="{{List}}" wx:key>
+				<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+			</block>
+		</view>
+	</view>
+</view>
+<!-- 插入选项卡 -->
+<view class='topTabSwiper'>
+	<view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>
+		主营项目
+	</view>
+	<view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>
+		名医荟萃
+	</view>
+</view>
+<swiper current="{{currentData}}" class='swiper' style="height:{{height}}rpx;" duration="300" bindchange="bindchange">
+	<swiper-item>
+		<view class='swiper_con'>
+			<!-- 主营项目start -->
+			<!-- 模板卡片 -->
+			<view class="card" wx:for="{{info_card}}" wx:key="i">
+				<!-- 循环利用id遍历跳转对应的作用域 -->
+				<!-- <navigator url="./details/details?office_name={{item.office_name}}"> -->
+				<navigator url="./details/details?i_id={{item.i_id}}&i_name={{item.i_name}}&i_details={{item.i_details}}&i_img={{item.i_img}}">
+					<view class="body_q">
+						<!-- left -->
+						<view>
+							<view class="image_mine">
+								<image src="{{url}}{{item.i_img}}" />
+							</view>
+						</view>
+						<!-- center -->
+						<view class="body_q_center">
+							<view class="text_mine">
+								<view class="text_mine_1">{{item.i_name}}</view>
+								<view class="text_mine_2">{{item.i_details}}</view>
+							</view>
+						</view>
+						<!-- right -->
+						<view class="body_q_right">
+							<view>
+								<!-- <text>￥{{item.i_price}}</text> -->
+							</view>
+						</view>
+						<view class="body_q_end">
+							<image src="{{url}}images/open.png" lazy-load='true'></image>
+						</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 主营项目end -->
+		</view>
+	</swiper-item>
+	<swiper-item>
+		<view class='swiper_con'>
+			<!-- 名医汇翠start -->
+			<!-- 模板卡片 -->
+			<view class="card" wx:for="{{info_user}}" wx:key="i">
+				<navigator url="./details/details?doc_id={{item.doc_id}}&doc_name={{item.doc_name}}&doc_duty={{item.doc_duty}}&doc_info={{item.doc_info}}&doc_office={{item.doc_office}}&doc_img={{item.doc_img}}">
+					<view class="body_q">
+						<!-- left -->
+						<view>
+							<view class="image_mine radius">
+								<image src="{{url}}{{item.doc_img}}" />
+							</view>
+						</view>
+						<!-- center -->
+						<view class="body_q_center">
+							<view class="text_mine">
+								<view class="text_mine_1">
+									{{item.doc_name}}
+									<text class="info_user_s">{{item.doc_duty}}</text>
+								</view>
+								<view class="text_mine_2">科室：{{item.doc_office}}</view>
+							</view>
+						</view>
+						<!-- right -->
+						<view class="body_q_right">
+							<view>
+								<!-- <text class="info_user_name">￥{{item.doc_price}}</text> -->
+							</view>
+						</view>
+						<view class="body_q_end">
+							<image src="{{url}}images/open.png" lazy-load='true'></image>
+						</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 名医汇翠end -->
+		</view>
+	</swiper-item>
+</swiper>

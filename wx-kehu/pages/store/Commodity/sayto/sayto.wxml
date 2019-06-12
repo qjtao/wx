@@ -1,0 +1,25 @@
+<!-- pages/Commodity/sayto/sayto.wxml -->
+<view class="sayTo">
+	<view class="sayHeader">
+		<text>商品评价</text>
+	</view>
+	<!-- 遍历评论信息 -->
+	<view class="card" wx:for="{{List}}" wx:key="i">
+		<view class="cardHeader">
+			<view class="cardImg">
+				<image src="{{url}}images/img/touxiang.jpg" lazy-load='true'></image>
+			</view>
+			<view class="cardHeaderName">
+				<text>{{item.nickName}}</text>
+				<!-- 放置评价性及信息 -->
+				<text>★★★★★</text>
+			</view>
+			<view class="time">
+				<text>{{item.time}}</text>
+			</view>
+		</view>
+		<view class="cardBodySay">
+			<text>{{item.sayto}}</text>
+		</view>
+	</view>
+</view>

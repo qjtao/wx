@@ -1,0 +1,11 @@
+/* pages/map/map.wxss */
+view {
+	width: 750rpx;
+	height: 120rpx;
+	background: rgb(0, 0, 0);
+	box-sizing: border-box;
+	border: 2rpx solid white;
+	color: white;
+	text-align: center;
+	line-height: 120rpx;
+}

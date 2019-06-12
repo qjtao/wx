@@ -1,0 +1,72 @@
+/* pages/store/Commodity/site/site.wxss */
+page {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+scroll-view {
+	background: #fff;
+}
+
+.product-name-wrap {
+	margin: 0px 10px;
+	font-size: 14px;
+	color: #404040;
+}
+
+.ui-list-item-info {
+	margin: 5px 0px;
+}
+
+.ui-list-item-address {
+	color: #585c64;
+}
+
+.ui-list-item-time {
+	margin: 10rpx 0rpx;
+	width: 80%;
+}
+
+.ui-list-item-del {
+	position: relative;
+	top: -55rpx;
+	right: -320rpx;
+	color: #585c64;
+}
+
+/* 分割线 */
+.separate {
+	margin: 10rpx 0rpx;
+	height: 2rpx;
+	background-color: #f2f2f2;
+}
+
+.add-address {
+	width: 100%;
+	height: 104rpx;
+	line-height: 104rpx;
+	text-align: center;
+	color: #fff;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	background: linear-gradient(90deg, #218fff, #4577fe);
+}
+
+.add-img {
+	margin-right: 15rpx;
+	width: 30rpx;
+	height: 30rpx;
+}
+
+/* 修改 */
+/* .amend{
+  width:50rpx;
+  height:50rpx;
+  float: right;
+}
+.amend image{
+  width:100%;
+  height:100%;
+} */

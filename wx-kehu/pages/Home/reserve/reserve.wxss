@@ -1,0 +1,149 @@
+/* pages/home/reserve/reserve.wxss */
+/* 背景色 */
+page {
+	background: rgba(237, 237, 237, 1);
+	font-size: calc(14rpx * 2);
+	font-family: PingFang-SC-Medium;
+}
+
+/* 患者信息 */
+.list {
+	margin: calc(10rpx * 2) 0;
+}
+
+.item {
+	display: flex;
+	height: calc(45rpx * 2);
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding: calc(10rpx * 2);
+	background: rgba(255, 255, 255, 1);
+}
+
+.list .item~.item {
+	margin-top: 2rpx;
+}
+
+input {
+	text-align: right;
+}
+
+.item .light {
+	color: rgba(172, 172, 172, 1);
+}
+
+.price {
+	color: rgba(255, 162, 30, 1);
+}
+
+.infoTitle {
+	color: rgba(0, 126, 233, 1);
+	margin: calc(16rpx * 2) calc(17rpx * 2);
+	position: relative;
+}
+
+.infoTitle::after {
+	content: "";
+	width: calc(2rpx * 2);
+	height: calc(20rpx * 2);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: calc(-5rpx * 2);
+	background: rgba(0, 126, 233, 1);
+	border-radius: 2rpx;
+}
+
+.bottom {
+	width: 100%;
+	display: flex;
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	position: fixed;
+	justify-content: space-between;
+	bottom: 0;
+	background: rgba(255, 255, 255, 1);
+}
+
+.bottom view,
+.picker .btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(49rpx * 2);
+	padding-left: calc(11rpx * 2);
+}
+
+.bottom .btn,
+.picker .btn {
+	width: calc(124rpx * 2);
+	background-image: linear-gradient(to right, rgba(32, 144, 253, 1), rgba(70, 118, 254, 1));
+	color: rgba(255, 255, 255, 1);
+	font-size: calc(16rpx * 2);
+}
+
+/* 上拉菜单 */
+.picker.box {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, .5);
+	z-index: 1000;
+	visibility: hidden;
+}
+
+.picker .container {
+	height: calc(250rpx * 2);
+	width: 100%;
+	position: fixed;
+	background: rgba(255, 255, 255, 1);
+	bottom: 0;
+	left: 0;
+	transition: .5s linear;
+	transform: translateY(calc(250rpx * 2));
+	margin: 0;
+}
+
+.picker .container .item {
+	border-bottom: 1rpx solid rgba(237, 237, 237, 1);
+}
+
+.picker .container .btn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.show.picker.box {
+	visibility: visible;
+}
+
+.show .container {
+	transform: translateY(0);
+}
+
+/* 单选按钮样式 */
+radio {
+	margin-left: calc(14rpx * 2);
+}
+
+radio .wx-radio-input {
+	width: calc(20rpx * 2);
+	height: calc(20rpx * 2);
+	background: transparent;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+	border-radius: 50%;
+	width: calc(20rpx * 2);
+	height: calc(20rpx * 2);
+	font-size: 0;
+	/* 对勾大小 26rpx */
+	color: rgba(0, 126, 233, 1);
+	/* 对勾颜色 */
+	background: rgba(0, 126, 233, 1);
+	border: 10rpx solid rgba(255, 255, 255, 1);
+	transform: translate(-50%, -50%) scale(1);
+	box-sizing: border-box;
+}

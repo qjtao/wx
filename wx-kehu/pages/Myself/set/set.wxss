@@ -1,0 +1,30 @@
+/* pages/Myself/set/set.wxss */
+.aa {
+	background: rgba(255, 255, 255, 1);
+	margin-top: 2rpx;
+	margin-bottom: 2rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	text-align: left;
+}
+
+#set {
+	position: relative;
+	top: 20rpx;
+}
+
+.aa text {
+	font-family: PingFang-SC-Regular;
+	font-size: 28rpx;
+	color: rgba(0, 0, 0, 1);
+	margin-left: 50rpx;
+}
+
+.to {
+	position: absolute;
+	right: 22rpx;
+	margin-top: 31rpx;
+	width: 16rpx;
+	height: 28rpx;
+	color: rgba(172, 172, 172, 1)
+}

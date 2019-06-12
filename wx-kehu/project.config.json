@@ -1,0 +1,106 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.0",
+	"appid": "wxf955cfce2ee70427",
+	"projectname": "%E5%AE%A2%E6%88%B7%E7%AB%AF",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "store",
+					"pathName": "pages/store/store",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Commodity",
+					"pathName": "pages/store/Commodity/Commodity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "oneselfGet",
+					"pathName": "pages/store/Commodity/oneselfGet/oneselfGet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "payResult",
+					"pathName": "pages/Home/payResult/payResult",
+					"query": "msg=4&i_id=1&doc_id=1&u_id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "express",
+					"pathName": "pages/store/Commodity/express/express",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "oneselfGet",
+					"pathName": "pages/store/Commodity/oneselfGet/oneselfGet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "evaluate",
+					"pathName": "pages/Home/evaluate/evaluate",
+					"scene": null
+				}
+			]
+		}
+	}
+}

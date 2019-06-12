@@ -1,0 +1,5 @@
+<!-- pages/Myself/set/safe/safe.wxml -->
+<view class="aa" bindtap='toPassworld'>
+	<text>设置支付密码</text>
+	<text class='iconfont icon-rightarrow'></text>
+</view>

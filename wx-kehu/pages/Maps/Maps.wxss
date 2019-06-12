@@ -1,0 +1,121 @@
+/* pages/Maps/Maps.wxss */
+.searchView {
+	width: 750rpx;
+	box-sizing: border-box;
+	height: 100rpx;
+	position: fixed;
+	top: 0;
+	background: #000;
+}
+
+.searchStore {
+	width: 720rpx;
+	position: relative;
+	margin: 0 auto;
+	top: 10%;
+	background: #fff;
+	font-size: 26rpx;
+	box-sizing: border-box;
+	text-align: center;
+	border-radius: 40rpx;
+	height: 80%;
+}
+
+/* 查询获取的店铺信息地址 */
+.storeBody {
+	width: 750rpx;
+	height: auto;
+	margin-top: 230rpx;
+}
+
+/* 卡片 */
+.card {
+	margin-top: 10rpx;
+	border-radius: 20rpx;
+	border: 2rpx solid rgb(114, 114, 114);
+	box-sizing: border-box;
+	display: flex;
+	height: auto;
+	flex-flow: row nowrap;
+	background: rgb(194, 194, 194);
+}
+
+/* 卡片头像 */
+.cardImg {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 1rpx solid black;
+	margin-top: 10rpx;
+	margin-left: 10rpx;
+	overflow: hidden;
+}
+
+.cardImg image {
+	width: 100rpx;
+	height: 100rpx;
+}
+
+/* 卡片主题部分 */
+.cardBody {
+	width: 650rpx;
+	height: auto;
+	display: flex;
+	flex-flow: column wrap;
+	box-sizing: border-box;
+}
+
+.cardBody text {
+	/* height: 50rpx; */
+	font-size: 26rpx;
+	text-align: left;
+	padding-left: 30rpx;
+	line-height: 50rpx;
+}
+
+/* 拨打电话按钮 */
+.phoneTo {
+	position: relative;
+	margin-left: 0rpx;
+	margin-bottom: 10rpx;
+	width: 200rpx;
+	font-size: 28rpx;
+	background: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+
+.btn {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.MAP {
+	position: absolute;
+	left: 310rpx;
+}
+
+.STORE {
+	position: absolute;
+	left: 514rpx;
+}
+
+/* 当前店铺 */
+.mine {
+	color: rgb(255, 255, 255);
+	background: rgba(0, 0, 0, 0.5);
+	border: 2rpx solid rgb(255, 255, 255);
+	box-sizing: border-box;
+}
+
+/* city */
+.searchCity {
+	position: fixed;
+	width: 750rpx;
+	height: 120rpx;
+	top: 100rpx;
+	border: 2rpx solid black;
+	box-sizing: border-box;
+	border-bottom-left-radius: 20rpx;
+	border-bottom-right-radius: 20rpx;
+}

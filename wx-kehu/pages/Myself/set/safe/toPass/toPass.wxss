@@ -1,0 +1,89 @@
+/* pages/Myself/set/safe/toPass/toPass.wxss */
+.aa {
+	width: 100%;
+	background: rgba(255, 255, 255, 1);
+	height: 90rpx;
+	box-sizing: border-box;
+	line-height: 90rpx;
+	font-size: 28rpx;
+	color: rgba(0, 0, 0, 1);
+	text-align: left;
+	padding-left: 50rpx;
+}
+
+.aa:first-child {
+	margin-top: 18rpx;
+	border-bottom: 2rpx solid rgba(237, 237, 237, 1);
+}
+
+.aa:last-child {
+	border-top: 2rpx solid rgba(237, 237, 237, 1);
+}
+
+/* 提示验证码信息 */
+.bb {
+	text-align: right;
+	font-size: 20rpx;
+	height: 54rpx;
+	line-height: 54rpx;
+	color: rgba(62, 123, 254, 1);
+	padding-right: 20rpx;
+	font-family: PingFang-SC-Regular;
+}
+
+/* 必须是6位不连续的数字。 */
+.cc {
+	text-align: left;
+	font-size: 20rpx;
+	color: rgba(72, 72, 72, 1);
+	font-family: PingFang-SC-Regular;
+	padding-left: 36rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+}
+
+/* 输入框 */
+.inp {
+
+	position: absolute;
+	display: inline-block;
+	left: 280rpx;
+	width: 200rpx;
+	height: 90rpx;
+	box-sizing: border-box;
+	border: 1rpx solid transparent;
+}
+
+/* .inps{
+  border:1rpx solid rgb(145, 145, 145);
+} */
+/* 按钮 */
+.dd {
+	width: 260rpx;
+	display: inline-block;
+	position: absolute;
+	right: 6rpx;
+	color: rgba(255, 255, 255, 1);
+	background: rgba(62, 123, 254, 1);
+	font-size: 24rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+
+}
+
+/* ee */
+.ee {
+	width: 750rpx;
+	text-align: center;
+	background: rgba(62, 123, 254, 1);
+	color: rgba(255, 255, 255, 1);
+	font-size: 32rpx;
+	height: 118rpx;
+	line-height: 118rpx;
+	position: fixed;
+	bottom: 0;
+}
+
+.inps {
+	width: 470rpx;
+}

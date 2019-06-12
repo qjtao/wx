@@ -1,0 +1,27 @@
+<!-- pages/store/Commodity/site/site.wxml -->
+<view>
+	<view style='width:100%;height:20rpx;background:#EDEDED;'></view>
+	<!-- 我的收货地址 -->
+	<scroll-view class="scroll" scroll-y="true">
+		<view wx:for="{{addressList}}" bindtap='to'>
+			<view class="product-name-wrap">
+				<view class="ui-list-item-info">
+					{{item.consignee}}
+					<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+					<text style='color:#3E7BFE;'>{{item.mobile}}</text>
+					<!-- <view class='amend'><image src='{{url}}images/store/amend.png' lazy-load='true'></image></view> -->
+				</view>
+				<view class="ui-list-item-address">{{item.address}}</view>
+				<view class="ui-list-item-time">
+					<view>{{item.transportDay}}</view>
+					<view class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</view>
+				</view>
+				<view class="separate"></view>
+			</view>
+		</view>
+	</scroll-view>
+	<view class="add-address" bindtap="addAddress">
+		<image class="add-img" src="{{url}}images/add.png" lazy-load='true'></image>
+		新增地址
+	</view>
+</view>

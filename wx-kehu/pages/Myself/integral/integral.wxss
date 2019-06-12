@@ -1,0 +1,185 @@
+/* pages/integral/integral.wxss */
+/* page */
+page {
+	background: rgba(237, 237, 237, 1);
+}
+
+#Header {
+	width: 750rpx;
+	height: 312rpx;
+	background: rgba(255, 255, 255, 1);
+}
+
+/* 头部大块 */
+.header {
+	padding-top: 40rpx;
+	width: 710rpx;
+	height: 220rpx;
+	margin: auto;
+	box-shadow: 0 0 4rpx rgba(0, 87, 204, 0.5);
+	background: linear-gradient(rgba(33, 143, 255, 1), rgba(69, 119, 254, 1))
+}
+
+.text_title {
+	font-size: 28rpx;
+	color: rgba(255, 255, 255, 1);
+	text-align: left;
+	font-family: PingFang-SC-Regular;
+	margin: 42rpx 40rpx;
+}
+
+.text_count {
+	line-height: 150rpx;
+	margin-left: 40rpx;
+	color: rgba(255, 255, 255, 1);
+	font-size: 80rpx;
+}
+
+#nav {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 110rpx;
+	line-height: 110rpx;
+	color: rgba(0, 0, 0, 1);
+	font-size: 28rpx;
+}
+
+#nav>view {
+	width: 50%;
+	text-align: left;
+	padding-left: 22rpx;
+}
+
+#nav>view:last-child {
+	text-align: right;
+	display: flex;
+}
+
+#nav>view:last-child view {
+	width: 50%;
+	text-align: center;
+}
+
+/* 信息 */
+#body_intergral {
+	width: 710rpx;
+	min-height: 100rpx;
+	background: rgba(255, 255, 255, 1);
+	margin: 0 auto 20rpx;
+	border-radius: 10rpx;
+}
+
+/* header_nav */
+.header_nav {
+	width: 95%;
+	display: flex;
+	flex-flow: row nowrap;
+	margin: auto;
+	border-bottom: 1rpx solid rgba(237, 237, 237, 1);
+	font-size: 28rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+}
+
+.header_nav>view {
+	width: 50%;
+	text-align: center;
+}
+
+/* 左侧导航 */
+.header_nav>view:first-child {
+	margin-left: 30rpx;
+	text-align: left;
+}
+
+/* 右侧导航 */
+.header_nav>view:last-child {
+	text-align: right;
+}
+
+.count_big {
+	font-size: 28rpx;
+	color: rgba(255, 162, 30, 1);
+	font-family: PingFang-SC-Medium;
+	text-align: left;
+}
+
+.card {
+	width: 95%;
+	margin: auto;
+	height: 100rpx;
+	display: flex;
+	flex-flow: row nowrap;
+	border-bottom: 1rpx solid rgba(237, 237, 237, 1);
+}
+
+.card_left,
+.card_right {
+	width: 50%;
+}
+
+.card_left>text {
+	display: block;
+	color: rgba(0, 0, 0, 1);
+	font-size: 28rpx;
+	line-height: 50rpx;
+}
+
+.card_left>text:last-child {
+	color: rgba(172, 172, 172, 1);
+	font-size: 24rpx;
+}
+
+.card_right>text {
+	line-height: 100rpx;
+	text-align: right;
+	width: 100%;
+	color: rgba(255, 162, 30, 1);
+	display: inline-block;
+}
+
+.red {
+	display: block;
+}
+
+.reds {
+	display: none;
+}
+
+.logo {
+	width: 154rpx;
+	height: 122rpx;
+	position: absolute;
+	right: 42rpx;
+	top: 88rpx;
+	opacity: 0.61;
+	background: linear-gradient(rgba(33, 144, 255, 0.089), rgba(69, 119, 254, 0.21));
+	overflow: hidden;
+}
+
+.state {
+	background: rgba(255, 255, 255, 1);
+}
+
+.blue {
+	width: 4rpx;
+	height: 40rpx;
+	position: absolute;
+	margin-top: 30rpx;
+	margin-left: 36rpx;
+	border-radius: 20rpx;
+	background: rgba(0, 126, 233, 1);
+}
+
+/* 三角形 */
+.bottom1 {
+	display: block;
+	position: relative;
+	bottom: 18rpx;
+}
+
+.bottom2 {
+	display: block;
+	position: relative;
+	bottom: 0;
+}

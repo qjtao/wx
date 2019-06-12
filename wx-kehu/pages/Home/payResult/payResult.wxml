@@ -1,0 +1,17 @@
+<!-- pages/home/payResult/payResult.wxml -->
+<view class='container'>
+	<view class='img'>
+		<!-- <image src='{{msg.img}}' lazy-load='true'></image> -->
+		<view class="iconfont {{msg.img}}"></view>
+	</view>
+	<view class='title'>{{msg.header}}</view>
+	<view class='jump iconfont icon-rightarrow' bindtap="jump">{{msg.body}}</view>
+</view>
+<view class="share" wx:if='{{show}}' bindtap='hideShare'>
+	<view class="content" catchtap='showShare'>
+		<image src="{{url}}{{shareBg}}" lazy-load='true'></image>
+		<view class="btn item iconfont icon-share" catchtap='shareItem'>项目分享</view>
+		<view class="btn doc iconfont icon-share" catchtap='shareDoc'>专家分享</view>
+		<view class="close iconfont icon-close" catchtap='hideShare'></view>
+	</view>
+</view>

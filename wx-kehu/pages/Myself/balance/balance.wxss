@@ -1,0 +1,70 @@
+/* pages/Myself/balance/balance.wxss */
+.top-bg {
+	height: 280rpx;
+	background: #fff;
+}
+
+.bg {
+	width: 710rpx;
+	height: 220rpx;
+	border-radius: 5rpx;
+	margin: 0 auto;
+	padding-top: 19rpx;
+	box-shadow: 0 10rpx 20rpx 0 rgba(0, 87, 204, 0.5);
+	background: linear-gradient(90deg, #218fff, #4577fe);
+}
+
+.bg view:first-child {
+	color: #fff;
+	font-size: 28rpx;
+	margin: 21rpx 0 0 20rpx;
+}
+
+.bg view:nth-child(2) {
+	color: #fff;
+	font-size: 80rpx;
+	margin: 25rpx 0 0 20rpx;
+}
+
+.bg .rmb {
+	width: 133rpx;
+	height: 120rpx;
+	position: absolute;
+	top: 50rpx;
+	right: 42rpx;
+}
+
+/*  */
+.msg {
+	height: 90rpx;
+	line-height: 90rpx;
+	padding: 0 20rpx 0 30rpx;
+	background: #fff;
+}
+
+.left-icon {
+	float: left;
+	height: 40rpx;
+	width: 40rpx;
+	margin-top: 27rpx;
+	margin-right: 22rpx;
+}
+
+.msg view image {
+	float: right;
+	height: 40rpx;
+	width: 40rpx;
+	margin-top: 27rpx;
+}
+
+.msg view {
+	float: right;
+}
+
+.mb-2 {
+	margin-bottom: 2rpx;
+}
+
+.msg text {
+	font-size: 28rpx;
+}

@@ -1,0 +1,31 @@
+<!--pages/Maps/Maps.wxml-->
+<view class="searchView" hover-class="none" hover-stop-propagation="false">
+	<input class="searchStore" type="text" placeholder="搜索关键字(店铺名称、店铺地址、店铺联系方式)" bindinput="searchStores" />
+</view>
+<view class="searchCity" hover-class="none" hover-stop-propagation="false">
+</view>
+<view class="storeBody" hover-class="none" hover-stop-propagation="false">
+	<block wx:for="{{myStoreList}}" wx:key="index">
+		<view class="card {{name==item.store_name?'mine':''}}">
+			<!-- 卡片图片位置 -->
+			<view class="cardImg" hover-class="none" hover-stop-propagation="false">
+				<image src="{{url}}{{item.store_logo}}" lazy-load='true' alt="" />
+			</view>
+			<!-- 卡片信息位置 -->
+			<view class="cardBody" hover-class="none" hover-stop-propagation="false">
+				<!-- 卡片名称 -->
+				<text class="">店铺名称：{{item.store_name}}{{name==item.store_name?'(当前店铺)':''}}
+				</text>
+				<!-- 卡片地址信息 -->
+				<text>店铺地址：{{item.store_site}}</text>
+				<!--卡片咨询电话  -->
+				<text>客服咨询：{{item.store_phone}}</text>
+				<view class="btn" hover-class="none" hover-stop-propagation="false">
+					<button wx:if="{{show}}" class="phoneTo" bindtap="btnMap" data-id='{{item.store_id}}' data-name='{{item.store_name}}'>进入地图</button>
+					<button wx:if="{{show}}" class="phoneTo MAP" bindtap='toPhone' data-phone='{{item.store_phone}}'>客服咨询</button>
+					<button wx:if="{{show}}" class="phoneTo MAP STORE" bindtap="btnStore" data-id='{{item.store_id}}' data-name='{{item.store_name}}'>进入店铺</button>
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

@@ -1,0 +1,125 @@
+/* pages/Commodity/sayto/sayto.wxss */
+.sayTo {
+	margin-top: 20rpx;
+	background: rgba(255, 255, 255, 1);
+}
+
+.sayHeader {
+	width: 750rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+	font-size: 24rpx;
+	text-align: left;
+	margin-left: 36rpx;
+	color: rgba(198, 198, 198, 1);
+}
+
+.card {
+	/* background: rgba(255, 255, 255, 1); */
+}
+
+/* cardHeader */
+.cardHeader {
+	display: flex;
+	width: 750rpx;
+	/* background: rgba(255, 255, 255, 1); */
+	margin-left: 70rpx;
+}
+
+.cardHeader image {
+	width: 48rpx;
+	height: 48rpx;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+
+/* cardHeaderName */
+.cardHeaderName {
+	/* background: rgba(255, 255, 255, 1); */
+	display: flex;
+	margin-left: 10rpx;
+	flex-flow: column wrap;
+}
+
+.cardHeaderName text:first-child {
+	font-size: 20rpx;
+	color: rgba(0, 0, 0, 1);
+	text-align: left;
+}
+
+.cardHeaderName text:last-child {
+	font-size: 16rpx;
+	overflow: hidden;
+}
+
+/* .cardHeaderName text:last-child::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20rpx;
+  background:red;
+  margin-top: -10rpx;
+} */
+/* cardBodySay */
+.cardBodySay {
+	/* background: rgba(255, 255, 255, 1); */
+	width: 624rpx;
+	text-align: left;
+	margin-left: 86rpx;
+	font-size: 18rpx;
+	font-weight: Medium;
+	font-family: PingFang-SC-Medium;
+	line-height: 30rpx;
+	color: rgba(0, 0, 0, 1);
+	min-height: 82rpx;
+}
+
+/* sayMore */
+.sayMore {
+	box-sizing: border-box;
+	border-top: 2rpx solid rgba(237, 237, 237, 1);
+	border-bottom: 2rpx solid rgba(237, 237, 237, 1);
+	height: 48rpx;
+	font-size: 18rpx;
+	line-height: 48rpx;
+	padding-left: 86rpx;
+}
+
+/* minfo */
+.minfo {
+	width: 750rpx;
+	background: rgba(255, 255, 255, 1);
+	margin-bottom: 84rpx;
+}
+
+.minfoHeader {
+	height: 74rpx;
+	line-height: 74rpx;
+	font-size: 24rpx;
+	color: rgba(198, 198, 198, 1);
+	text-align: left;
+	padding-left: 36rpx;
+}
+
+.minfoBody {
+	margin-top: -40rpx;
+	height: 270rpx;
+	font-size: 18rpx;
+	color: rgba(0, 0, 0, 1);
+	text-align: left;
+	width: 624rpx;
+	padding-left: 44rpx;
+}
+
+/* time */
+.time {
+	position: absolute;
+	right: 0;
+	text-align: right;
+	padding-right: 24rpx;
+	font-size: 16rpx;
+	line-height: 48rpx;
+	color: rgba(102, 101, 101, 1);
+	font-family: PingFang-SC-Medium;
+	font-weight: Medium;
+}

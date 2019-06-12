@@ -1,0 +1,30 @@
+<!-- pages/withdraw/withdraw.wxml -->
+<view>
+	<!-- 提现金额输入框 -->
+	<view class='add-text'>
+		<view>提现金额</view>
+		<input type='number' />
+		<image class='money' src='../../images/top-up/money.png' lazy-load='true'></image>
+	</view>
+	<!-- 全部提现 -->
+	<text class='all-money'>全部提现</text>
+	<!-- 账户余额显示 -->
+	<view class='balance'>
+		<view>账户余额：30.00元</view>
+	</view>
+	<!-- 提现至微信 -->
+	<view class='fetch-wx'>
+		<view class='towx'>
+			<view>提现至微信</view>
+		</view>
+		<view class='wxNumber'>
+			<input type='number' placeholder='请输入提现微信号' placeholder-style='color:#acacac;'></input>
+		</view>
+	</view>
+	<!-- 提现说明 -->
+	<view class='explain'>预计两个工作日内到账</view>
+	<!-- 立即支付 -->
+	<view>
+		<button type='submit'>提交提现申请</button>
+	</view>
+</view>

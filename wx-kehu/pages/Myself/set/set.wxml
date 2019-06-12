@@ -1,0 +1,20 @@
+<!-- pages/Myself/set/set.wxml -->
+<view id="set">
+	<view class="aa" catchtap='safe'>
+		<view>
+			<text>安全中心</text>
+			<image class="to" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+	<!-- <view class="aa">
+  <view><text>退出账户</text>
+    <image class="to" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+  </view>
+</view> -->
+	<view class="aa" catchtap='abooutMe'>
+		<view>
+			<text>关于我们</text>
+			<image class="to" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+</view>

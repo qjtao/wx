@@ -1,0 +1,114 @@
+<!-- 蓝湖 客户端个人信息展示 ｛导航：【账户余额、积分账户、个人信息、设置中心】、个人信息板块、头像｝ -->
+<!-- open-type="getUserInfo" -->
+<view id="Header_q">
+	<view class="Header_bg">
+		<view class="avatar_q">
+			<!-- 头像 -->
+			<image class="avatar" src="{{userInfo.avatarUrl}}" alt="" lazy-load='true'></image>
+		</view>
+		<!-- 用户名 -->
+		<view class="text_user">
+			{{userInfo.nickName}}
+			<text>{{u_grade}}</text>
+		</view>
+	</view>
+</view>
+<!-- 下列详情表 -->
+<!-- 遍历账户余额、积分账户、个人信息、设置中心 -->
+<view id="nav_q">
+	<view class="nav_li" bindtap="toM">
+		<!-- 账户余额 -->
+		<view class="img">
+			<image src="{{url}}images/icon/balance.png" lazy-load='true'></image>
+		</view>
+		<!-- text -->
+		<view class="text_1">
+			<text>账户余额</text>
+		</view>
+		<view class="text_2">
+			<text>{{userInfo.nickName==null?'0':u_balance}} 元</text>
+		</view>
+		<view class="map_q">
+			<!-- 图标 -->
+			<image style="width:16rpx;height:28rpx;" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+	<!-- 2 -->
+	<view class="nav_li" bindtap="toAc">
+		<!-- 积分账户 -->
+		<view class="img">
+			<image src="{{url}}images/icon/integral.png" lazy-load='true'></image>
+		</view>
+		<!-- text -->
+		<view class="text_1">
+			<text>积分账户</text>
+		</view>
+		<view class="text_2">
+			<text>{{u_integral}} 积分</text>
+		</view>
+		<view class="map_q">
+			<!-- 图标 -->
+			<image style="width:16rpx;height:28rpx;" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+	<!-- 3 -->
+	<view class="nav_li" bindtap="toThree">
+		<!-- 个人·信息 -->
+		<view class="img">
+			<image src="{{url}}images/icon/mineInfo.png" lazy-load='true'></image>
+		</view>
+		<!-- text -->
+		<view class="text_1">
+			<text>个人信息</text>
+		</view>
+		<view class="text_2">
+			<text></text>
+		</view>
+		<view class="map_q">
+			<!-- 图标 -->
+			<image style="width:16rpx;height:28rpx;" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+	<!-- 商家信息 -->
+	<view class="nav_li" bindtap="tofive">
+		<view class="img">
+			<image src="{{url}}images/icon/store.png" lazy-load='true'></image>
+		</view>
+		<!-- text -->
+		<view class="text_1">
+			<text>商家信息</text>
+		</view>
+		<view class="text_2">
+			<text></text>
+		</view>
+		<view class="map_q">
+			<!-- 图标 -->
+			<image style="width:16rpx;height:28rpx;" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+	<!-- 设置中心 -->
+	<view class="nav_li" bindtap="toFour">
+		<!-- avatar -->
+		<view class="img">
+			<image src="{{url}}images/icon/set.png" lazy-load='true'></image>
+		</view>
+		<!-- text -->
+		<view class="text_1">
+			<text>设置中心</text>
+		</view>
+		<view class="text_2">
+			<text></text>
+		</view>
+		<view class="map_q">
+			<!-- 图标 -->
+			<image style="width:16rpx;height:28rpx;" src="{{url}}images/pic/arrow_icon.png" lazy-load='true'></image>
+		</view>
+	</view>
+</view>
+<view></view>
+<!-- 注释：刷新手机号数据 -->
+<!-- <button class='pop_btn' plain="true"
+open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取用户手机号</button>
+<button bindtap='number'>
+  aa1
+</button> -->

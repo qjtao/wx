@@ -1,0 +1,262 @@
+/* pages/Commodity/Commodity.wxss */
+/* headerImg */
+#headerImg {
+	width: 750rox;
+	height: 498rpx;
+	box-sizing: border-box;
+}
+
+#headerImg image {
+	width: 100%;
+	height: 100%;
+}
+
+/* footView */
+#footView {
+	display: flex;
+	height: 84rpx;
+	width: 750rpx;
+	position: fixed;
+	bottom: 0;
+	background: rgba(255, 255, 255, 1);
+}
+
+#footView image {
+	width: 48rpx;
+	height: 48rpx;
+	vertical-align: middle;
+	margin-right: 14rpx;
+}
+
+#footView>view {
+	width: 32%;
+	text-align: center;
+}
+
+#footView>view>text {
+	line-height: 84rpx;
+}
+
+#footView view {
+	color: rgba(30, 30, 30, 1);
+	font-weight: 500;
+	font-size: 28rpx;
+	text-align: right;
+	margin-left: 16rpx;
+}
+
+#footView view~view {
+	background: rgba(255, 0, 0, 1);
+	border-radius: 16rpx;
+	text-align: center;
+	font-family: PingFang-SC-Regular;
+	color: rgba(255, 255, 255, 1);
+	width: 264rpx;
+}
+
+/* bodyHeader */
+.bodyHeader {
+	width: 750rpx;
+	background: rgba(255, 255, 255, 1);
+	position: relative;
+}
+
+.bodyHeader .share {
+	position: absolute;
+	right: 30rpx;
+	font-size: 24rpx;
+	padding: 6rpx 14rpx;
+	background: rgba(224, 221, 221, 1);
+	border-radius: 28rpx;
+	bottom: 40rpx;
+}
+
+.bodyHeader>view {
+	width: 100%;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.bodyHeader>view>text {
+	text-align: left;
+	margin-left: 36rpx;
+	font-family: PingFang-SC-Regular;
+}
+
+.bodyHeader>view>text:first-child {
+	margin-top: 28rpx;
+	font-weight: 700;
+	font-size: 32rpx;
+}
+
+.bodyHeader>view>text:last-child {
+	margin-top: 0;
+	margin-bottom: 20rpx;
+}
+
+.small {
+	font-size: 20rpx;
+	color: rgba(167, 165, 163, 1);
+	text-decoration: line-through;
+	/*文字排版--删除线*/
+}
+
+/* textT */
+.textT1 {
+	color: rgba(255, 162, 30, 1);
+}
+
+.textT {
+	font-size: 28rpx;
+	color: rgba(0, 0, 0, 1);
+}
+
+.lg {
+	font-size: 24rpx;
+	color: rgba(198, 198, 198, 1);
+}
+
+/* map */
+.map {
+	border-top: 2rpx solid rgba(237, 237, 237, 1);
+	border-bottom: 2rpx solid rgba(237, 237, 237, 1);
+	display: flex;
+	height: 82rpx;
+	line-height: 82rpx;
+	background: rgba(255, 255, 255, 1);
+}
+
+.map view:first-child {
+	width: 22%;
+	text-align: center;
+	font-size: 24rpx;
+	color: rgba(198, 198, 198, 1);
+}
+
+.map view:last-child {
+	width: 75%;
+	text-align: left;
+	font-size: 24rpx;
+	color: rgba(0, 0, 0, 1);
+}
+
+.sayTo {
+	background: rgba(255, 255, 255, 1);
+}
+
+.sayHeader {
+	width: 750rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+	font-size: 24rpx;
+	text-align: left;
+	margin-left: 36rpx;
+	color: rgba(198, 198, 198, 1);
+}
+
+.card {
+	background: rgba(255, 255, 255, 1);
+}
+
+/* cardHeader */
+.cardHeader {
+	display: flex;
+	width: 750rpx;
+	margin-left: 70rpx;
+}
+
+.cardHeader image {
+	width: 48rpx;
+	height: 48rpx;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+
+/* cardHeaderName */
+.cardHeaderName {
+	display: flex;
+	margin-left: 10rpx;
+	flex-flow: column wrap;
+}
+
+.cardHeaderName text:first-child {
+	font-size: 24rpx;
+	color: rgba(0, 0, 0, 1);
+	text-align: left;
+}
+
+.cardHeaderName text:last-child {
+	font-size: 24rpx;
+	overflow: hidden;
+}
+
+/* .cardHeaderName text:last-child::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20rpx;
+  background:red;
+  margin-top: -10rpx;
+} */
+/* cardBodySay */
+.cardBodySay {
+	/* background: rgba(255, 255, 255, 1); */
+	width: 624rpx;
+	text-align: left;
+	margin-left: 86rpx;
+	font-size: 20rpx;
+	font-weight: Medium;
+	font-family: PingFang-SC-Medium;
+	line-height: 30rpx;
+	color: rgba(0, 0, 0, 1);
+	min-height: 82rpx;
+}
+
+/* sayMore */
+.sayMore {
+	box-sizing: border-box;
+	border-top: 2rpx solid rgba(237, 237, 237, 1);
+	border-bottom: 2rpx solid rgba(237, 237, 237, 1);
+	height: 48rpx;
+	font-size: 24rpx;
+	line-height: 48rpx;
+	padding-left: 86rpx;
+}
+
+/* minfo */
+.minfo {
+	width: 750rpx;
+	background: rgba(255, 255, 255, 1);
+	margin-bottom: 84rpx;
+}
+
+.minfoHeader {
+	height: 74rpx;
+	line-height: 74rpx;
+	font-size: 24rpx;
+	color: rgba(198, 198, 198, 1);
+	text-align: left;
+	padding-left: 36rpx;
+}
+
+.minfoBody {
+	height: auto;
+	font-size: 24rpx;
+	color: rgba(0, 0, 0, 1);
+	text-align: left;
+	padding: 0 44rpx 22rpx;
+	margin-bottom: calc(59rpx * 2);
+}
+
+/* time */
+.time {
+	position: absolute;
+	right: 0;
+	text-align: right;
+	padding-right: 24rpx;
+	font-size: 20rpx;
+	line-height: 48rpx;
+	color: rgba(102, 101, 101, 1);
+	font-family: PingFang-SC-Medium;
+	font-weight: Medium;
+}

@@ -1,0 +1,111 @@
+/* pages/store/address/address.wxss */
+@import '../../../../utils/weui.wxss';
+
+.weui-cells:before {
+	top: 0;
+	border-top: 1rpx solid white;
+}
+
+.weui-cells:after {
+	bottom: 0;
+	border-bottom: 1rpx solid white
+}
+
+.weui-btn {
+	width: 100%;
+	margin: 0;
+	background: linear-gradient(90deg, #218fff, #4577fe);
+	position: fixed;
+	bottom: 0;
+	border-radius: 0;
+}
+
+/* 收货人，手机号字体样式 */
+.left-size {
+	font-size: 30rpx;
+}
+
+.placeholderStyle {
+	font-size: 26rpx;
+}
+
+.weui-cell_input {
+	background: #fff;
+}
+
+/* 选择地址 */
+.userinfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.userinfo-avatar {
+	width: 128rpx;
+	height: 128rpx;
+	margin: 20rpx;
+	border-radius: 50%;
+}
+
+.userinfo-nickname {
+	color: #aaa;
+}
+
+.select {
+	height: 88rpx;
+	text-align: left;
+	line-height: 88rpx;
+	font-size: 30rpx;
+}
+
+.selectSite {
+	padding: 0 15px;
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.selectSite view:first-child {
+	font-size: 30rpx;
+}
+
+.weui-cell__hd {
+	width: 30%;
+}
+
+.weui-label {
+	width: 100%;
+}
+
+.details-site {
+	padding: 10rpx 0;
+}
+
+textarea {
+	width: 100%;
+	height: 120rpx;
+	font-size: 30rpx;
+	padding: 20rpx 0 20rpx 40rpx;
+	box-sizing: border-box;
+}
+
+/* 设置默认地址 */
+/* 选中前 */
+checkbox .wx-checkbox-input {
+	border-radius: 50%;
+	width: 40rpx;
+	height: 40rpx;
+}
+
+/* 选中后 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	font-size: 0;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	background-color: #3E7BFE;
+}

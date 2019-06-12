@@ -1,0 +1,52 @@
+<!-- 蓝湖 账单明细板块 ｛消费记录、消费记录详情｝ -->
+<view id="nav">
+	<view class="left">
+		<text>消费记录</text>
+	</view>
+	<view class="right">
+		<view bindtap='click0'>
+			<!-- 年份 -->
+		</view>
+		<view bindtap='click1'>
+			<!-- 月份 -->
+		</view>
+		<view bindtap='click2' class="iconfont {{isTrue==1?'icon-downarrow':''}}">全部</view>
+	</view>
+</view>
+<!-- 消费信息综合，判断月份取值 -->
+<!-- 遍历对象的操作展示月份内容 -->
+<view id="body_intergral">
+	<view class="card" wx:if="{{isTrue==1}}" wx:for="{{List}}" wx:key="i">
+		<view class="card_left">
+			<text>{{item.tran_direction==1?'充值':'支出'}}</text>
+			<text>{{item.time}}</text>
+		</view>
+		<view class="card_right">
+			<text class="{{item.tran_direction==1?'yellow':'red'}}">
+				{{item.tran_direction==1?'+':'-'}}{{item.tran_money}}
+			</text>
+		</view>
+	</view>
+	<!-- </view> -->
+	<view class="blue" wx:if="{{isTrue==0}}"></view>
+	<view class="header_nav" wx:if="{{isTrue==0}}" wx:for="{{mounthList}}" wx:key="i">
+		<text>{{item}}</text>
+		<text wx:if="{{isTrue==0}}">月</text>
+		<!-- </view> -->
+		<view>
+			消费:
+			<text class="count_big">{{item.count}}</text>
+		</view>
+	</view>
+	<!-- /年份 -->
+	<view class="blue" wx:if="{{isTrue==2}}"></view>
+	<view class="header_nav" wx:if="{{isTrue==2}}" wx:for="{{YList}}" wx:key="i">
+		<text>{{item}}</text>
+		<text wx:if="{{isTrue==2}}">年</text>
+		<!-- </view> -->
+		<view>
+			消费:
+			<text class="count_big">{{item.count}}</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,54 @@
+<!-- 蓝湖 积分记录 ｛总积分板块、详情板块、积分记录｝ -->
+<view id="Header">
+	<!-- 积分主板 -->
+	<view class="header">
+		<view>
+			<text class="text_title">积分余额（个）</text>
+		</view>
+		<view>
+			<text class="text_count">{{Count_full}}</text>
+		</view>
+		<view class="state">
+			<image class="logo" src="{{url}}images/monery.png" lazy-load='true' />
+		</view>
+	</view>
+</view>
+<!-- 积分记录板块 -->
+<view id="nav">
+	<view class="left">
+		<text>积分记录</text>
+	</view>
+	<view class="right">
+		<!-- <view bindtap='click0'>年份
+          <view style="display:inline-block;width:24rpx;height:18rpx;overflow:hidden;">
+            <image class="{{isTrue==2?'bottom1':'bottom2'}}" style='width:100%;height:36rpx;' src="{{url}}images/pic/moren_icon.png" lazy-load='true'></image>
+          </view>
+      </view> -->
+		<view bindtap='click1'>
+			<!-- 月份 -->
+		</view>
+		<view bindtap='click2' class="iconfont {{isTrue==1?'icon-downarrow':''}}">全部</view>
+	</view>
+</view>
+<!-- 积分记录板块详情 -->
+<view id="body_intergral">
+	<view>
+		<!-- <view class="blue"></view> -->
+		<!-- <view class="header_nav"> -->
+		<!-- 判断当前时间与时间戳的时间，是否相等、本月显示本月，否则显示相对于的月份 -->
+		<!-- <view><text wx:if="{{item.id==1}}"><text wx:if="{{isTrue==2}}">{{year}}年</text></text><text>{{year==item.year?'':item.year}}</text>{{year==item.year?'':'年'}}<text>{{mounth==item.mounth?'本':item.mounth}}</text>
+        <text wx:if="{{isTrue!=2}}">月</text>
+        </view> -->
+		<!-- <view>获取: <text class="count_big">{{item.count}}</text></view> -->
+		<!-- </view> -->
+		<view class="card" wx:for="{{myList}}" wx:key="i" wx:if="{{isTrue==1}}">
+			<view class="card_left">
+				<text>{{item.inte_type== 1?'消费':item.inte_type==2 ? '评论':'分享'}}</text>
+				<text>{{item.inte_time}}</text>
+			</view>
+			<view class="card_right">
+				<text>{{item.inte_direction==1?'+':'-'}}{{item.inte_money}}</text>
+			</view>
+		</view>
+	</view>
+</view>
